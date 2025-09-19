@@ -1,0 +1,10 @@
+<x-layout>
+    <section>
+        <h3>Companies</h3>
+        <div>
+            <x-company-card></x-company-card>
+            <x-company-card></x-company-card>
+            <x-company-card></x-company-card>
+        </div>
+    </section>
+</x-layout>

@@ -1,0 +1,11 @@
+<x-layout>
+    <section>
+        <h3>Employees</h3>
+        <div>
+            <x-employee-card></x-employee-card>
+            <x-employee-card></x-employee-card>
+            <x-employee-card></x-employee-card>
+            <x-employee-card></x-employee-card>
+        </div>
+    </section>
+</x-layout>
