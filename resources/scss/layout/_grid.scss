@@ -1,0 +1,31 @@
+@use '../helpers/media-query' as mq;
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "site-sidebar"
+        "site-content";
+
+    @include mq.set-breakpoint('medium') {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: 
+            "site-sidebar site-content";
+    }
+}
+
+.site-sidebar {
+    grid-column: site-sidebar;
+    width: 100dvw;
+
+    @include mq.set-breakpoint('medium') {
+        width: 200px;
+        height: 100dvh;
+        position: fixed;
+    }
+}
+
+.site-content {
+    grid-area: site-content
+}
+
