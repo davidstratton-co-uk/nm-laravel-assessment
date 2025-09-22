@@ -2,10 +2,9 @@
     <section>
         <h3>Employees</h3>
         <div>
-            <x-employee-card></x-employee-card>
-            <x-employee-card></x-employee-card>
-            <x-employee-card></x-employee-card>
-            <x-employee-card></x-employee-card>
+            @foreach ( $employees as $employee)
+                <x-employee-card :$employee></x-employee-card> 
+            @endforeach
         </div>
     </section>
 </x-layout>

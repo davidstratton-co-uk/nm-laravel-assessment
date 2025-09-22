@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 
-class EmployeeController extends Controller
-{am
+class EmployeeController
+{
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('employees.index', [
+            'employees' => Employee::all()
+        ]);
     }
 
     /**

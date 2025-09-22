@@ -2,9 +2,9 @@
     <section>
         <h3>Companies</h3>
         <div>
-            <x-company-card></x-company-card>
-            <x-company-card></x-company-card>
-            <x-company-card></x-company-card>
+            @foreach ($companies as $company)
+            <x-company-card :$company ></x-company-card>
+            @endforeach
         </div>
     </section>
 </x-layout>

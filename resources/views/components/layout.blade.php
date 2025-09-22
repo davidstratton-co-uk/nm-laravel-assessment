@@ -10,13 +10,13 @@
     <div>
         <nav>
             <div>
-                <a href="#">
+                <a href="/">
                     Laravel Assessment
                 </a>
             </div>
             <ul>
-                <li><a href="#">Companies</a></li>
-                <li><a href="#">Employees</a></li>
+                <li><a href="/companies">Companies</a></li>
+                <li><a href="/employees">Employees</a></li>
             </ul>
             <ul>
                 <li>
