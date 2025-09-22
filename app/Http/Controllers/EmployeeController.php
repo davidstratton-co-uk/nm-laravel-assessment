@@ -40,7 +40,7 @@ class EmployeeController
      */
     public function show(Employee $employee)
     {
-        return view('employee.show', [
+        return view('employees.show', [
             'employee' => $employee
         ]);
     }
@@ -50,7 +50,9 @@ class EmployeeController
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('employees.edit', [
+            'employee' => $employee
+        ]);
     }
 
     /**
@@ -66,6 +68,8 @@ class EmployeeController
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+
+        return redirect('/employees');
     }
 }

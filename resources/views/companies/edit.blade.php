@@ -1,41 +1,44 @@
 <x-layout>
     <section>
-        <div class="company-card-big">
-            <h3>Editing - {{ company['name'] }}</h3>
-            <div class="company-details">
-                <div>
-                    <div>Company Name:</div>
-                    <div>{{ company['name'] }}</div>
-                </div>
-                <div>
-                    <div>E-Mail:</div>
-                    <div>{{ company['email'] }}</div>
-                </div>
-                <div>
-                    <div>Website:</div>
-                    <div>{{ company['website'] }}</div>
-                </div>
-            </div>
-            <ul>
-                <li>
-                    <div class="employee-name">{{ employee['name'] }}</div>
-                    <div class="employee-phone">{{ emplyuee['phone'] }}</div>
-                    <div class="employee-email">{{ emplyuee['email'] }}</div>
-                    <div class="employee-edit">
-                        <button class="employee-edit-btn" type=button>
-
-                        </button>
+        <form action="/companies{{ $company->id }}/edit" method="post">
+            @csrf
+            <div class="company-card-big">
+                <h3>Viewing - {{ $company->name }}</h3>
+                <div class="company-details">
+                    <div>
+                        <div>E-Mail:</div>
+                        <div>{{ $company->email }}</div>
                     </div>
-                </li>
-            </ul>
-            <div class="employee-controls">
-                <button class="employee-add-btn">Add Existing Employee</button>
-                <button class="employee-add-btn">Add New Employee</button>
+                    <div>
+                        <div>Website:</div>
+                        <div>{{ $company->website }}</div>
+                    </div>
+                </div>
+                <div class="company-employee-list">
+                    <ul>
+                        @foreach($company->employees as $employee)
+                        <li>
+                            <div class="employee-name">{{ $employee->first_name }} {{ $employee->last_name }}</div>
+                            <div class="employee-phone">{{ $employee->phone }}</div>
+                            <div class="employee-email">{{ $employee->email }}</div>
+                            <div class="employee-edit">
+                                <button class="employee-edit-btn" type=button>
+                                    Edit
+                                </button>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
-    <   </div>
-        <div class="company-controls">
-            <button class="company-edit-btn">Confirm</button>
-            <button class="company-del-btn">Delete</button>
-        </div>
+            <div class="form-edit-controls">
+                <button type="submit" id="company-edit-btn" name="company-edit-btn">Submit Edit</button>
+            </div>
+        </form>
+        <form action="/companies/{{ $company->id }}/del" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" id="company-del-btn" name="company-del-btn">Delete</button>
+        </form>
     </section>
 </x-layout>

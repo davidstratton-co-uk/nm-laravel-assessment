@@ -50,7 +50,9 @@ class CompanyController
      */
     public function edit(Company $company)
     {
-        //
+        return view('companies.edit', [
+            'company' => $company
+        ]);
     }
 
     /**
@@ -66,6 +68,8 @@ class CompanyController
      */
     public function destroy(Company $company)
     {
-        //
+        $company->delete();
+
+        return redirect('/companies');
     }
 }
