@@ -6,7 +6,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\RegisteredUserController;
 
-Route::get('/', [CompanyController::class, 'index']);
+Route::get('/', [SessionController::class, 'create']);
 
 Route::get('/companies', [CompanyController::class, 'index'])->middleware('auth');
 Route::get('/companies/{company:id}', [CompanyController::class, 'show'])->middleware('auth');

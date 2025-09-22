@@ -34,7 +34,7 @@ class SessionController
 
         request()->session()->regenerate();
 
-        return redirect('/');
+        return redirect('/companies');
     }
 
     /**
