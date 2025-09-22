@@ -14,6 +14,7 @@
                     Laravel Assessment
                 </a>
             </div>
+            @auth
             <ul>
                 <li><a href="/companies">Companies</a></li>
                 <li><a href="/employees">Employees</a></li>
@@ -21,10 +22,20 @@
             <ul>
                 <li>
                     <form action="/logout" method="POST">
-                        <a href="#">Logout</a>
+                        @csrf
+                        @method('DELETE')
+                        <button>Logout</button>
                     </form>
                 </li>
+            </ul> 
+            @endauth
+            @guest
+            <ul>
+                <li>
+                    <a href="/login">login</a>
+                </li>
             </ul>
+            @endguest 
         </nav>
 
         <main>
