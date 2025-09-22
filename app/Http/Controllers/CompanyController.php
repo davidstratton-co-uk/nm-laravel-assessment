@@ -24,13 +24,13 @@ class CompanyController
      */
     public function create()
     {
-        //
+        return view('companies.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCompanyRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -38,15 +38,17 @@ class CompanyController
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Company $company)
     {
-        //
+        return view('companies.show', [
+            'company' => $company
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Company $company)
     {
         //
     }
@@ -54,7 +56,7 @@ class CompanyController
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCompanyRequest $request, string $id)
+    public function update(Request $request, Company $company)
     {
         //
     }
@@ -62,7 +64,7 @@ class CompanyController
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Company $company)
     {
         //
     }

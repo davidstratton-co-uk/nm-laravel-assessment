@@ -13,6 +13,10 @@ class SessionController
      */
     public function create()
     {
+        if ( auth()->check() ) {
+            return redirect('/companies');
+        }
+
         return view('auth.login');
     }
 
