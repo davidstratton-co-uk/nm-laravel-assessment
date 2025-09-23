@@ -2,7 +2,7 @@
     <section>
         <form id="form-edit" action="/employees/{{ $employee->id }}/edit" method="POST">
             @csrf
-            @method('UPDATE')
+            @method('PATCH')
 
             <div class="employee-card-big">
                 <h3>Editing - {{ $employee->first_name }} {{ $employee->last_name }}</h3>
@@ -19,7 +19,7 @@
                     </div>
                     <label class="form-label" for="employee_company">
                         <span>Company:</span>
-                        <input type="text" id="employee_company" name="employee_company" value="{{ $employee->company->name }}">
+                        <input type="text" id="employee_company" name="employee_company" value="{{ $employee->company->id }}">
                     </label>
                     <label class="form-label" for="employee_phone">
                         <span>Phone:</span>

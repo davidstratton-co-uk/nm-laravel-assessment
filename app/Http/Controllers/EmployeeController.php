@@ -32,7 +32,23 @@ class EmployeeController
      */
     public function store()
     {
-        //
+        request()->validate([
+            'employee_first_name' => ['required', 'min:3'],
+            'employee_last_name' => ['required'],
+            'employee_company' => ['required'],
+            'employee_phone' => ['required'],
+            'employee_email' => ['required']
+        ]);
+
+        $company = Employee::create([
+            'first_name' => request('employee_first_name'),
+            'last_name' => request('employee_last_name'),
+            'company_id' => request('employee_company'),
+            'phone' => request('employee_phone'),
+            'email' => request('employee_email')
+        ]);
+
+        return redirect('/employees/' . $company->id);
     }
 
     /**
@@ -60,7 +76,23 @@ class EmployeeController
      */
     public function update(Employee $employee)
     {
-        //
+        request()->validate([
+            'employee_first_name' => ['required', 'min:3'],
+            'employee_last_name' => ['required'],
+            'employee_company' => ['required'],
+            'employee_phone' => ['required'],
+            'employee_email' => ['required']
+        ]);
+
+        $employee->update([
+            'first_name' => request('employee_first_name'),
+            'last_name' => request('employee_last_name'),
+            'company_id' => request('employee_company'),
+            'phone' => request('employee_phone'),
+            'email' => request('employee_email')
+        ]);
+
+        return redirect('/employees/' . $employee->id);
     }
 
     /**

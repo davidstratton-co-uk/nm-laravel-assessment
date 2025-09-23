@@ -46,7 +46,7 @@ class CompanyController
             'website' => request('company_website')
         ]);
 
-        return redirect('/companies');
+        return redirect('/companies/' . $company->id);
     }
 
     /**
@@ -74,7 +74,21 @@ class CompanyController
      */
     public function update(Company $company)
     {
-        //
+        request()->validate([
+            'company_name' => ['required', 'min:3'],
+            'company_logo' => ['required'],
+            'company_email' => ['required'],
+            'company_website' => ['required']
+        ]);
+
+        $company->update([
+            'name' => request('company_name'),
+            'logo' => request('company_logo'),
+            'email' => request('company_email'),
+            'website' => request('company_website')
+        ]);
+
+        return redirect('/companies/' . $company->id);
     }
 
     /**

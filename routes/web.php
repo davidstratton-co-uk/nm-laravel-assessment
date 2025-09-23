@@ -21,7 +21,7 @@ Route::get('/employees/create', [EmployeeController::class, 'create'])->middlewa
 Route::post('/employees/create', [EmployeeController::class, 'store'])->middleware('auth');
 Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->middleware('auth');
 Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->middleware('auth');
-Route::patch('/employees/{employee}edit', [EmployeeController::class, 'update'])->middleware('auth');
+Route::patch('/employees/{employee}/edit', [EmployeeController::class, 'update'])->middleware('auth');
 Route::delete('/employees/{employee}/del', [EmployeeController::class, 'destroy'])->middleware('auth');
 
 Route::get('/login', [SessionController::class, 'create'])->middleware('guest');
