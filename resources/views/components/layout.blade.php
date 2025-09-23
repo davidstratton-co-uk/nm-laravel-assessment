@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NM Laravel Assessment | David Stratton</title>
-    @vite(['resources/js/app.js'])
+    @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body>
-    <div>
+    <div id="site-container">
+        @if (!request()->routeIs('login'))
         <nav>
             <div>
                 <a href="/">
@@ -29,14 +30,8 @@
                 </li>
             </ul> 
             @endauth
-            @guest
-            <ul>
-                <li>
-                    <a href="/login">login</a>
-                </li>
-            </ul>
-            @endguest 
         </nav>
+        @endif
         <main>
             {{ $slot }}
         </main>
