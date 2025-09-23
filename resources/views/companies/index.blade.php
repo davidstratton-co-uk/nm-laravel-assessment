@@ -16,5 +16,8 @@
             </div>
             @endforeach
         </div>
+        <div>
+            {{ $companies->links('components.pagination') }}
+        </div>
     </section>
 </x-layout>

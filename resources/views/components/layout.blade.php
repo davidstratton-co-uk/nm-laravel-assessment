@@ -37,10 +37,9 @@
             </ul>
             @endguest 
         </nav>
-
         <main>
             {{ $slot }}
         </main>
-    <div>
+    </div>
 </body>
 </html>

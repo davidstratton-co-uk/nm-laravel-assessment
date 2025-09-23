@@ -14,8 +14,9 @@ class CompanyController
      */
     public function index()
     {
+
         return view('companies.index', [
-            'companies' => Company::all()
+            'companies' => Company::paginate(10)
         ]);
     }
 
