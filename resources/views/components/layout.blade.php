@@ -9,12 +9,12 @@
 <body>
     <div id="site-container">
         @if (!request()->routeIs('login'))
-        <nav>
-            <div>
+        <nav id="site-nav">
+            <header id="site-header">
                 <a href="/">
-                    Laravel Assessment
+                    <h1>Laravel Assessment</h1>
                 </a>
-            </div>
+            </header>
             @auth
             <ul>
                 <li><a href="/companies">Companies</a></li>

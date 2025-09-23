@@ -1,0 +1,23 @@
+#site-nav {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+#site-header a {
+    display: flex;
+    gap: .5rem;
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+#site-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-self: center;
+    text-transform: uppercase;
+}
