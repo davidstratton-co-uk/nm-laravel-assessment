@@ -2,13 +2,16 @@
     <section>
         <form action="/companies/create" method="post">
             @csrf
-            @method("STORE")
             <div class="company-card-big">
                 <h3>Creating New Company</h3>
                 <div class="company-details">
                     <label for="company_name">
                         <div>Company Name: </div>
                         <input type="text" id="company_name" name="company_name">
+                    </label>
+                    <label for="company_name">
+                        <div>Company Logo:</div>
+                        <input type="text" id="company_logo" name="company_logo">
                     </label>
                     <label for="company_email">
                         <div>E-Mail:</div>

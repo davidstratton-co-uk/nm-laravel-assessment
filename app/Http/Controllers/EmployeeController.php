@@ -30,7 +30,7 @@ class EmployeeController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -58,7 +58,7 @@ class EmployeeController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Employee $employee)
     {
         //
     }

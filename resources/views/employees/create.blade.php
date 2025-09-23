@@ -2,8 +2,6 @@
     <section>
         <form action="/employees/create" method="POST">
             @csrf
-            @method("STORE")
-
             <div class="employee-card-big">
                 <h3>Creating New Employee  </h3>
                 <div>

@@ -30,9 +30,23 @@ class CompanyController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        request()->validate([
+            'company_name' => ['required', 'min:3'],
+            'company_logo' => ['required'],
+            'company_email' => ['required'],
+            'company_website' => ['required']
+        ]);
+
+        $company = Company::create([
+            'name' => request('company_name'),
+            'logo' => request('company_logo'),
+            'email' => request('company_email'),
+            'website' => request('company_website')
+        ]);
+
+        return redirect('/companies');
     }
 
     /**
@@ -58,7 +72,7 @@ class CompanyController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Company $company)
+    public function update(Company $company)
     {
         //
     }
