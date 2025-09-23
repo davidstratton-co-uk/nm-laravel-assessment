@@ -1,36 +1,39 @@
 <x-layout>
     <section>
-        <div class="company-card-big">
-            <h3>Viewing - {{ $company->name }}</h3>
-            <div class="company-details">
-                <div>
-                    <div>E-Mail:</div>
-                    <div>{{ $company->email }}</div>
-                </div>
-                <div>
-                    <div>Website:</div>
-                    <div>{{ $company->website }}</div>
-                </div>
-            </div>
-            <div class="company-employee-list">
-                <ul>
+        <div class="card-big">
+            <header class="card-heading">
+                <h3>Viewing - {{ $company->name }}</h3>
+                <a href="/companies/{{ $company->id }}/edit">Edit Company</a>
+            </header>
+            <img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt="Logo of {{ $company->name }}">
+            <dl>
+                <dt>E-Mail</dt>
+                <dd>{{ $company->email }}</dd>
+                <dt>Website:</dt>
+                <dd>{{ $company->website }}</dd>
+            </dl>
+            <table class="company-employee-list">
+                <caption>List of Employees</caption>
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </thead>
+                <tbody>
                     @foreach($company->employees as $employee)
-                    <li>
-                        <div class="employee-name">{{ $employee->first_name }} {{ $employee->last_name }}</div>
-                        <div class="employee-phone">{{ $employee->phone }}</div>
-                        <div class="employee-email">{{ $employee->email }}</div>
-                        <div class="employee-edit">
-                            <button class="employee-edit-btn" type=button>
-                                Edit
-                            </button>
-                        </div>
-                    </li>
+                    <tr>
+                        <td>{{ $employee->first_name }}</td>
+                        <td>{{ $employee->last_name }}</td>
+                        <td>{{ $employee->phone }}</td>
+                        <td>{{ $employee->email }}</td>
+                    </tr>
                     @endforeach
-                </ul>
-            </div>
+                </tbody>
+            </table>
         </div>
-        <div class="company-controls">
-            <a href="/company/{{ $company->id }}/edit">Edit</button>
+        <div class="card-controls">
+            <a href="/companies/{{ $company->id }}/edit">Edit Company</a>
         </div>
     </section>
 </x-layout>

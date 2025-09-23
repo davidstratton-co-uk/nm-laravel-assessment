@@ -1,15 +1,23 @@
 <x-layout>
     <section>
         <div class="employee-card-big">
-            <h3>Viewing - {{ $employee->first_name }} {{ $employee->last_name }}</h3>
-            <div>
-                    <div class="employee-company">{{ $employee->company->name }}</div>
-                    <div class="employee-phone">{{ $employee->phone }}</div>
-                    <div class="employee-email">{{ $employee->email }}</div>
-            </div>
+            <header class="card-heading">
+                <h3>Viewing - {{ $employee->first_name }} {{ $employee->last_name }}</h3>
+                <a href="/employees/{{ $employee->id }}/edit">Edit User</a>
+            </header>
+            <dl>
+                <dt>Name</dt>
+                <dd>{{ $employee->first_name }} {{ $employee->last_name }}</dt>
+                <dt>Company</dt>
+                <dd>{{ $employee->company->name }}</dt>
+                <dt>Phone</dt>
+                <dd>{{ $employee->phone }}</dt>
+                <dt>Email</dt>
+                <dd>{{ $employee->email }}</dt>
+            </dl>
         </div>
-        <div class="company-controls">
-            <a href="/employees/{{ $employee->id }}/edit">Edit</a>
+        <div class="form-controls">
+            <a href="/employees/{{ $employee->id }}/edit">Edit User</a>
         </div>
     </section>
 </x-layout>

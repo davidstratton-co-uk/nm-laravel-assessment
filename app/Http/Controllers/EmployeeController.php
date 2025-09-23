@@ -24,7 +24,7 @@ class EmployeeController
      */
     public function create()
     {
-        //
+        return view('employees.create');
     }
 
     /**
