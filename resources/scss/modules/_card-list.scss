@@ -1,11 +1,45 @@
 .card-list {
-    padding: .5rem 1rem;
-    display: grid;
-    gap: 2rem;
+    box-shadow: 0 0 30px #000;
+    background-color: #1e242e;
+    margin: auto;
+
+    td {
+        
+    }
+
+    th,
+    td {
+        padding: .5rem;
+    }
+
+    thead {
+        color: #c8c8c8;
+    }
+
+    tbody {
+        background-color: #354152;
+
+        tr:nth-child(even) {
+            background-color: #435268;
+        }
+    }
+
+    .card-img--small {
+        display: grid;
+        width: 66px;
+        height: 66px;
+        justify-items: center;
+        align-items: center;
+
+        img {
+            max-height: 50px;
+            max-width: 50px;
+        }
+    }
 }
 
 .card-small {
-    box-shadow: 0 0 30px #000;
+    
     position: relative;
     display: grid;
     padding: 1rem;

@@ -1,24 +1,36 @@
 <x-layout>
     <section>
         <h2>Employees</h2>
+        <table class="card-list">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Company</th>
+                    <th>Phone</th>
+                    <th>E-Mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ( $employees as $employee)
+                <tr>
+                    <td class="card-img--small"><a href="/employees/{{ $employee->id }}"><i class="fa-solid fa-circle-user"></i></a></td>
+                    <td><a href="/employees/{{ $employee->id }}">{{ $employee->first_name }}</a></td>
+                    <td><a href="/employees/{{ $employee->id }}">{{ $employee->last_name }}</a></td>
+                    <td>
+                        @if (isset($employee->company_id))<a href="/companies/{{ $employee->company_id }}">{{  $employee->company->name }}</a>
+                        @else No Company
+                        @endif
+                    </td>
+                    <td>{{ $employee->phone }}</td>
+                    <td><a href="mailto://{{ $employee->email }}">{{ $employee->email }}</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
         <div>
-            @foreach ( $employees as $employee)
-            <div class="employee-card">
-                <a class="employee-link" href="/employees/{{ $employee->id }}"></a>
-                <div class="employee-details">
-                    <div class="employee-first_name">{{ $employee->first_name }}</div>
-                    <div class="employee-last_name">{{ $employee->last_name }}</div>
-                    <div class="employee-company">
-                    @if (isset($employee->company_id))<a href="/companies/{{ $employee->company_id }}">{{  $employee->company->name }}</a>
-                    @else <span>No Company</span>
-                    @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            <div>
             {{ $employees->links('components.pagination') }}
-            </div>
         </div>
     </section>
 </x-layout>

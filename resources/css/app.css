@@ -10651,12 +10651,13 @@ a:hover {
 
 body {
   background-color: #354152;
-  color: #7e8ba3;
+  color: #c8c8c8;
 }
 
 #site-container {
   min-height: 100dvh;
   display: grid;
+  grid-template-rows: max-content 1fr;
 }
 
 main {
@@ -10728,7 +10729,7 @@ main {
   }
 }
 #site-nav a {
-  color: rgb(200, 200, 200);
+  color: #c8c8c8;
   font-weight: 600;
 }
 
@@ -10773,16 +10774,40 @@ h2 {
   margin: 2rem 0 1rem 0;
   font-size: 3rem;
   color: rgb(200, 200, 200);
+  text-align: center;
 }
 
 .card-list {
-  padding: 0.5rem 1rem;
+  box-shadow: 0 0 30px #000;
+  background-color: #1e242e;
+  margin: auto;
+}
+.card-list th,
+.card-list td {
+  padding: 0.5rem;
+}
+.card-list thead {
+  color: #c8c8c8;
+}
+.card-list tbody {
+  background-color: #354152;
+}
+.card-list tbody tr:nth-child(even) {
+  background-color: #435268;
+}
+.card-list .card-img--small {
   display: grid;
-  gap: 2rem;
+  width: 66px;
+  height: 66px;
+  justify-items: center;
+  align-items: center;
+}
+.card-list .card-img--small img {
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .card-small {
-  box-shadow: 0 0 30px #000;
   position: relative;
   display: grid;
   padding: 1rem;
@@ -10818,4 +10843,32 @@ h2 {
   content: ":";
   position: absolute;
   right: 0;
+}
+
+.pagination {
+  display: grid;
+  grid-template-columns: 3, 1fr;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.pagination-showing {
+  justify-self: center;
+  grid-column: span 3;
+}
+
+.pagination-previous {
+  justify-self: right;
+}
+
+.pagination-pages {
+  justify-self: center;
+}
+.pagination-pages > span {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pagination-next {
+  justify-self: left;
 }/*# sourceMappingURL=app.css.map */

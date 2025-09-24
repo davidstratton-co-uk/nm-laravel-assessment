@@ -1,0 +1,28 @@
+.pagination {
+    display: grid;
+    grid-template-columns: (3, 1fr);
+    padding: 1rem;
+    gap: .5rem;
+}
+
+.pagination-showing {
+    justify-self: center;
+    grid-column: span 3;
+}
+
+.pagination-previous {
+    justify-self: right;
+}
+
+.pagination-pages {
+    justify-self: center;
+
+    > span {
+        display: flex;
+        gap: .5rem;
+    }
+}
+
+.pagination-next {
+    justify-self: left;
+}

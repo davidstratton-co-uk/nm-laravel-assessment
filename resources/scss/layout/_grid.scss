@@ -2,12 +2,14 @@
 
 body {
     background-color: #354152;
-    color: #7e8ba3;
+    //color: #7e8ba3;
+    color: #c8c8c8;
 }
 
 #site-container {
     min-height: 100dvh;
     display: grid;
+    grid-template-rows: max-content 1fr;
 }
 
 main {
