@@ -21,7 +21,6 @@
             @endforeach
             </tbody>
         </table>
-        </div>
         <div>
             {{ $companies->links('components.pagination') }}
         </div>

@@ -35,6 +35,9 @@
         <main>
             {{ $slot }}
         </main>
+        <footer>
+            Designed by <a href="https://davidstratton.co.uk">David Stratton</a>
+        </footer>
     </div>
 </body>
 </html>

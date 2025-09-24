@@ -9,9 +9,15 @@ body {
 #site-container {
     min-height: 100dvh;
     display: grid;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content 1fr max-content;
 }
 
 main {
-    padding: 0 1rem;
+    padding: 0 1rem
+}
+
+footer {
+    margin-top: 2rem;
+    background-color: #28303b;
+    padding: .5rem 1rem;
 }

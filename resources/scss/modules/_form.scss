@@ -1,14 +1,55 @@
 .form-container {
     display: flex;
-    height: 100%;
 }
 
 .form {
-    box-shadow: 0 0 250px #000;
+    box-shadow: 0 0 30px #000;
     margin: auto;
     padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+
+        input {
+            color: inherit;
+            width: 100%;
+            border: 1px solid #242c37;
+            border-radius: 999px;
+            background-color: transparent;
+            text-align: center;
+            outline: 0;
+            padding: 0.5rem 1rem;
+
+            /* Change Autocomplete styles in Chrome*/
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus
+            {
+                -webkit-text-fill-color: #7e8ba3;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+
+        }
+
+    }
+
+    button {
+        outline: 0;
+        padding: 0.5rem 1rem;
+        border: 1px solid #242c37;
+        border-radius: 999px;
+        background-color: transparent;
+        text-align: center;
+        background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
+        color: black;
+        width: 100%;
+    }     
+
 }

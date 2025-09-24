@@ -1,29 +1,25 @@
 <x-layout>
+    <h2>Create Company</h2>
     <div class="form-container">
         <form class="form" action="/companies/create" method="post">
             @csrf
-            <div class="company-card-big">
-                <h2>Creating New Company</h2>
-                <div class="company-details">
-                    <label for="company_name">
-                        <div>Company Name: </div>
-                        <input type="text" id="company_name" name="company_name">
-                    </label>
-                    <label for="company_name">
-                        <div>Company Logo:</div>
-                        <input type="text" id="company_logo" name="company_logo">
-                    </label>
-                    <label for="company_email">
-                        <div>E-Mail:</div>
-                        <input type="text" id="company_email" name="company_email">
-                    </label>
-                    <label for="company_website">
-                        <div>Website:</div>
-                        <input type="text" id="company_website" name="company_website">
-                    </label>
-                </div>
-            </div>
-            <div class="form-create-controls">
+            <label for="company_name">
+                <span>Company Name</span>
+                <input type="text" id="company_name" name="company_name">
+            </label>
+            <label for="company_name">
+                <span>Company Logo</span>
+                <input type="text" id="company_logo" name="company_logo">
+            </label>
+            <label for="company_email">
+                <span>E-Mail</span>
+                <input type="text" id="company_email" name="company_email">
+            </label>
+            <label for="company_website">
+                <span>Website</span>
+                <input type="text" id="company_website" name="company_website">
+            </label>
+            <div class="form-controls">
                 <button type="submit" id="company-create-btn" name="company-create-btn">Create Company</button>
             </div>
         </form>
