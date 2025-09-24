@@ -1,6 +1,6 @@
 <x-layout>
     <section>
-        <h3>Employees</h3>
+        <h2>Employees</h2>
         <div>
             @foreach ( $employees as $employee)
             <div class="employee-card">

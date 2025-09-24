@@ -5,7 +5,7 @@
             @method('PATCH')
 
             <div class="employee-card-big">
-                <h3>Editing - {{ $employee->first_name }} {{ $employee->last_name }}</h3>
+                <h2>Editing - {{ $employee->first_name }} {{ $employee->last_name }}</h2>
                 <div>
                     <div class="form-group">
                         <label class="form-label" for="employee_first_name">

@@ -1,18 +1,21 @@
 <x-layout>
     <section>
-        <h3>Companies</h3>
-        <div>
+        <h2>Companies</h2>
+        <div class="card-list">
             @foreach ($companies as $company)
-            <div class="company-card">
-                <a class="company-link" href="/companies/{{ $company->id }}"></a>
-                <div class="company-img">
+            <div class="card-small">
+                <a href="/companies/{{ $company->id }}"></a>
+                <div class="card-img">
                     <img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" height="100px" alt="">
                 </div>
-                <div class="company-details">
-                    <div class="company-name"><a class="company-link" href="/companies/{{ $company->id }}">{{ $company->name }}</a></div>
-                    <div class="company-email">{{ $company->email }}</div>
-                    <div class="company-website"><a href="{{ $company->website }}">{{ $company->website }}</a></div>
-                </div>
+                <dl>
+                    <dt>Name</dt>
+                    <dd><a href="/companies/{{ $company->id }}">{{ $company->name }}</a></dd>
+                    <dt>E-Mail</dt>
+                    <dd><a href="mailto://{{ $company->email }}"">{{ $company->email }}</a></dd>
+                    <dt>Website</dt>
+                    <dd><a href="https://{{ $company->website }}">{{ $company->website }}</a></dd>
+                </dl>
             </div>
             @endforeach
         </div>

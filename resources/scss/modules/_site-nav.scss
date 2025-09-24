@@ -1,11 +1,24 @@
+@use '../helpers/media-query' as mq;
+
 #site-nav {
     display: grid;
-    grid-template-columns: max-content 1fr max-content;
-    align-items: baseline;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 1rem;
+    background-color: #1e242e;
+    justify-items: center;
+
+    @include mq.set-breakpoint('large') {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    a {
+        color: rgb(200, 200, 200);
+        font-weight: 600;
+    }
 }
 
-#site-header a {
+#site-header {
     display: flex;
     gap: .5rem;
 
@@ -15,9 +28,35 @@
 }
 
 #site-nav ul {
-    display: flex;
+    display: none;    
     list-style: none;
     gap: 2rem;
-    justify-self: center;
+    justify-self: end;
     text-transform: uppercase;
+
+    
+    @include mq.set-breakpoint('large') {
+        display: flex;    
+    }
+
+    &.nav-tabs {
+        justify-self: center;
+        margin-top: .5rem;
+        margin-bottom: -1rem;
+
+        > li {
+            border-radius: 10px 10px 0 0;
+        }
+
+        > li:first-of-type {
+            background-color: #354152;
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
 }

@@ -3,7 +3,7 @@
         <form action="/companies/create" method="post">
             @csrf
             <div class="company-card-big">
-                <h3>Creating New Company</h3>
+                <h2>Creating New Company</h2>
                 <div class="company-details">
                     <label for="company_name">
                         <div>Company Name: </div>

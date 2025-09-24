@@ -1,0 +1,9 @@
+.card-list {
+  padding: 0.5rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card-small {
+  box-shadow: 0 0 250px #000;
+}/*# sourceMappingURL=-card-list.css.map */

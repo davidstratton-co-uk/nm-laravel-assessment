@@ -10659,6 +10659,10 @@ body {
   display: grid;
 }
 
+main {
+  padding: 0 1rem;
+}
+
 #login {
   display: flex;
   height: 100%;
@@ -10712,23 +10716,106 @@ body {
 
 #site-nav {
   display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  align-items: baseline;
+  grid-template-columns: 1fr;
   gap: 1rem;
+  padding: 1rem;
+  background-color: #1e242e;
+  justify-items: center;
+}
+@media only screen and (min-width: 992px) {
+  #site-nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#site-nav a {
+  color: rgb(200, 200, 200);
+  font-weight: 600;
 }
 
-#site-header a {
+#site-header {
   display: flex;
   gap: 0.5rem;
 }
-#site-header a h1 {
+#site-header h1 {
   font-size: 2rem;
 }
 
 #site-nav ul {
-  display: flex;
+  display: none;
   list-style: none;
   gap: 2rem;
-  justify-self: center;
+  justify-self: end;
   text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  #site-nav ul {
+    display: flex;
+  }
+}
+#site-nav ul.nav-tabs {
+  justify-self: center;
+  margin-top: 0.5rem;
+  margin-bottom: -1rem;
+}
+#site-nav ul.nav-tabs > li {
+  border-radius: 10px 10px 0 0;
+}
+#site-nav ul.nav-tabs > li:first-of-type {
+  background-color: #354152;
+}
+#site-nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+h2 {
+  margin: 2rem 0 1rem 0;
+  font-size: 3rem;
+  color: rgb(200, 200, 200);
+}
+
+.card-list {
+  padding: 0.5rem 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.card-small {
+  box-shadow: 0 0 30px #000;
+  position: relative;
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card-small > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+.card-small .card-img {
+  max-height: 100px;
+  justify-self: center;
+}
+.card-small dl {
+  width: 100%;
+  margin: 0 1rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem;
+  z-index: 1;
+}
+.card-small dl dt {
+  font-weight: 600;
+  position: relative;
+  padding-right: 0.5rem;
+  text-transform: uppercase;
+}
+.card-small dl dt:after {
+  content: ":";
+  position: absolute;
+  right: 0;
 }/*# sourceMappingURL=app.css.map */

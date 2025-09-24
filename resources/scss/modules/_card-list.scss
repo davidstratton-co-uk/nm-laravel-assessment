@@ -1,0 +1,48 @@
+.card-list {
+    padding: .5rem 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.card-small {
+    box-shadow: 0 0 30px #000;
+    position: relative;
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+
+    > a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .card-img {
+        max-height: 100px;
+        justify-self: center;
+    }
+
+    dl {
+        width: 100%;
+        margin: 0 1rem;
+        display:grid;
+        grid-template-columns: max-content 1fr;
+        gap: .5rem;
+        z-index: 1;
+        dt {
+            font-weight: 600;
+            position: relative;
+            padding-right: .5rem;
+            text-transform: uppercase;
+
+            &:after {
+                content: ":";
+                position: absolute;
+                right: 0; 
+            }
+        }
+    }
+}

@@ -36,8 +36,8 @@ class CompanyController
         request()->validate([
             'company_name' => ['required', 'min:3'],
             'company_logo' => ['required'],
-            'company_email' => ['required'],
-            'company_website' => ['required']
+            'company_email' => ['required','email'],
+            'company_website' => ['required','url']
         ]);
 
         $company = Company::create([

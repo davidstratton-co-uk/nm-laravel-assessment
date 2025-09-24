@@ -15,13 +15,14 @@
                     <h1>Laravel Assessment</h1>
                 </a>
             </header>
-            @auth
-            <ul>
+            <ul class="nav-tabs">
                 <li><a href="/companies">Companies</a></li>
                 <li><a href="/employees">Employees</a></li>
             </ul>
             <ul>
-                <li>
+                <li><a href="/companies/create">Add Company</a></li>
+                <li><a href="/employees/create">Add Employee</a></li>    
+                <li class="logout-btn">
                     <form action="/logout" method="POST">
                         @csrf
                         @method('DELETE')
@@ -29,7 +30,6 @@
                     </form>
                 </li>
             </ul> 
-            @endauth
         </nav>
         @endif
         <main>

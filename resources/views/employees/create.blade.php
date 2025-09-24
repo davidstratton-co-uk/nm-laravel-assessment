@@ -3,7 +3,7 @@
         <form action="/employees/create" method="POST">
             @csrf
             <div class="employee-card-big">
-                <h3>Creating New Employee  </h3>
+                <h2>Creating New Employee  </h2>
                 <div>
                     <div class="form-group">
                         <label class="form-label" for="employee_first_name">

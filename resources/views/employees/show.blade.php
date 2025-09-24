@@ -2,7 +2,7 @@
     <section>
         <div class="employee-card-big">
             <header class="card-heading">
-                <h3>Viewing - {{ $employee->first_name }} {{ $employee->last_name }}</h3>
+                <h2>Viewing - {{ $employee->first_name }} {{ $employee->last_name }}</h2>
                 <a href="/employees/{{ $employee->id }}/edit">Edit User</a>
             </header>
             <dl>

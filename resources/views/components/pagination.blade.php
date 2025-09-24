@@ -1,47 +1,35 @@
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}">
-        <div>
-            <div>
-                @if ($paginator->onFirstPage())
-                    <span>
-                        {!! __('pagination.previous') !!}
-                    </span>
-                @else
-                    <a href="{{ $paginator->previousPageUrl() }}">
-                        {!! __('pagination.previous') !!}
-                    </a>
-                @endif
-            </div>
-            
-            <div>
-                <p>
-                    {!! __('Showing') !!}
-                    @if ($paginator->firstItem())
-                        <span class="font-medium">{{ $paginator->firstItem() }}</span>
-                        {!! __('to') !!}
-                        <span class="font-medium">{{ $paginator->lastItem() }}</span>
-                    @else
-                        {{ $paginator->count() }}
-                    @endif
-                    {!! __('of') !!}
-                    <span class="font-medium">{{ $paginator->total() }}</span>
-                    {!! __('results') !!}
-                </p>
-            </div>
+    <nav class="pagination" role="navigation" aria-label="{{ __('Pagination Navigation') }}">
 
-            <div>
-                @if ($paginator->hasMorePages())
-                    <a href="{{ $paginator->nextPageUrl() }}">
-                        {!! __('pagination.next') !!}
-                    </a>
+        <div class="pagination-showing">
+            <p>
+                {!! __('Showing') !!}
+                @if ($paginator->firstItem())
+                    <span class="font-medium">{{ $paginator->firstItem() }}</span>
+                    {!! __('to') !!}
+                    <span class="font-medium">{{ $paginator->lastItem() }}</span>
                 @else
-                    <span>
-                        {!! __('pagination.next') !!}
-                    </span>
+                    {{ $paginator->count() }}
                 @endif
-            </div>
+                {!! __('of') !!}
+                <span class="font-medium">{{ $paginator->total() }}</span>
+                {!! __('results') !!}
+            </p>
         </div>
-        <div>
+
+        <div class="pagination-previous">
+            @if ($paginator->onFirstPage())
+                <span>
+                    {!! __('pagination.previous') !!}
+                </span>
+            @else
+                <a href="{{ $paginator->previousPageUrl() }}">
+                    {!! __('pagination.previous') !!}
+                </a>
+            @endif
+        </div>
+        
+        <div class="pagination-pages">
             <span>
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
@@ -93,5 +81,18 @@
                 @endif
             </span>
         </div>
+
+        <div class="pagination-next">
+            @if ($paginator->hasMorePages())
+                <a href="{{ $paginator->nextPageUrl() }}">
+                    {!! __('pagination.next') !!}
+                </a>
+            @else
+                <span>
+                    {!! __('pagination.next') !!}
+                </span>
+            @endif
+        </div>
+
     </nav>
 @endif

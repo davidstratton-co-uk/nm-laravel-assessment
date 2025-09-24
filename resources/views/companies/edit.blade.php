@@ -4,7 +4,7 @@
             @csrf
             @method("PATCH")
             <div class="card-big">
-                <h3>Viewing - {{ $company->name }}</h3>
+                <h2>Viewing - {{ $company->name }}</h2>
                 <img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt="Logo of {{ $company->name }}">
                 <div>
                     <label for="company_logo">
@@ -20,7 +20,7 @@
                         <input type="text" id="company_email" name="company_email" value="{{ $company->email }}">
                     </label>
                     <label for="company_website">
-                        <span>Website:</span>
+                        <span>Website</span>
                         <input type="text" id="company_website" name="company_website" value="{{ $company->website }}">
                     </label>
                 </div>
