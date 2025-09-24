@@ -1,6 +1,6 @@
 <x-layout>
-    <section>
-        <form action="/companies/create" method="post">
+    <div class="form-container">
+        <form class="form" action="/companies/create" method="post">
             @csrf
             <div class="company-card-big">
                 <h2>Creating New Company</h2>
@@ -27,5 +27,5 @@
                 <button type="submit" id="company-create-btn" name="company-create-btn">Create Company</button>
             </div>
         </form>
-    </section>
+    </div>
 </x-layout>
