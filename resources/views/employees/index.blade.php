@@ -8,7 +8,8 @@
                 <th scope="col">Last Name</th>
                 <th scope="col">Company</th>
                 <th scope="col">Phone</th>
-                <th scope="col">E-Mail</th>
+                <th scope="col">Email</th>
+                <th scope="col">Last Updated</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
@@ -26,6 +27,7 @@
                 </td>
                 <td>{{ $employee->phone }}</td>
                 <td><a href="mailto://{{ $employee->email }}">{{ $employee->email }}</a></td>
+                <td>{{ $employee->updated_at }}</td>
                 <td><a class="edit-btn" href="/employees/{{ $employee->id }}/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
                 <td><button class="delete-btn" form="form-delete" formaction="/employees/{{  $employee->id }}/del" type="submit"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
