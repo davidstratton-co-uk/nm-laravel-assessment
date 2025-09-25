@@ -1,1 +1,0 @@
-{"version":3,"sources":["..\\scss\\modules\\-page-list.scss","-page-list.css"],"names":[],"mappings":"AAAA;EACI,oBAAA;EACA,aAAA;ACCJ","file":"-page-list.css","sourcesContent":[".card-list {\r\n    padding: .5rem 1rem;\r\n    display: grid;\r\n}",".card-list {\n  padding: 0.5rem 1rem;\n  display: grid;\n}"]}

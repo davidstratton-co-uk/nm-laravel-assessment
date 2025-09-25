@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\RegisteredUserController;
 
-Route::get('/', [SessionController::class, 'create'])->name('login');
+Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/companies', [CompanyController::class, 'index'])->middleware('auth');
 Route::get('/companies/create', [CompanyController::class, 'create'])->middleware('auth');
@@ -24,6 +25,6 @@ Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->m
 Route::patch('/employees/{employee}/edit', [EmployeeController::class, 'update'])->middleware('auth');
 Route::delete('/employees/{employee}/del', [EmployeeController::class, 'destroy'])->middleware('auth');
 
-Route::get('/login', [SessionController::class, 'create'])->middleware('guest');
+Route::get('/login', [SessionController::class, 'create'])->name('login')->middleware('guest');
 Route::post('/login', [SessionController::class, 'store'])->middleware('guest');
 Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');

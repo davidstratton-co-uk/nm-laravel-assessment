@@ -5,7 +5,7 @@
                 <x-site-logo />
                 <h2>Login</h2>
                 <label for="email">
-                    <span>E-Mail</span>
+                    <span>Email</span>
                     <input type="text" id="email" name="email">
                 </label>
                 <label for="password">

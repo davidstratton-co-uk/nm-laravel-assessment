@@ -10779,6 +10779,18 @@ main {
   align-items: center;
   padding: 0 1rem;
 }
+#site-nav ul .logout-btn {
+  background-color: #c8c8c8;
+  border-radius: 30px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  gap: 0.2rem;
+}
+#site-nav ul .logout-btn:hover {
+  outline: 1px solid #c8c8c8;
+  outline-offset: 0.2rem;
+}
 
 h2 {
   margin: 2rem 0 1rem 0;
@@ -10791,6 +10803,11 @@ h2 {
   box-shadow: 10px 10px 20px 0px #000;
   background-color: #1e242e;
   margin: auto;
+}
+.card-list caption {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  color: rgb(200, 200, 200);
 }
 .card-list th,
 .card-list td {
@@ -10950,7 +10967,7 @@ h2 {
 }
 
 .form {
-  box-shadow: 0 0 30px #000;
+  box-shadow: 10px 10px 20px 0px #000;
   margin: auto;
   padding: 3rem;
   display: flex;
@@ -11017,4 +11034,11 @@ h2 {
 .form .edit-controls button:last-of-type {
   justify-self: right;
   background-image: linear-gradient(160deg, #ea8c8c 0%, #8f3737 100%);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+  gap: 4rem;
 }/*# sourceMappingURL=app.css.map */

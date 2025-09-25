@@ -16,17 +16,18 @@
                 </a>
             </header>
             <ul class="nav-tabs">
+                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Dashboard</a></li>
                 <li class="{{ request()->is('companies') ? 'active' : '' }}"><a href="/companies">Companies</a></li>
                 <li class="{{ request()->is('employees') ? 'active' : '' }}"><a href="/employees">Employees</a></li>
             </ul>
             <ul class="nav-tabs">
                 <li class="{{ request()->is('companies/create') ? 'active' : ''  }}"><a href="/companies/create">Add Company</a></li>
                 <li class="{{ request()->is('employees/create') ? 'active' : ''  }}"><a href="/employees/create">Add Employee</a></li>    
-                <li class="logout-btn">
-                    <form action="/logout" method="POST">
+                <li>
+                    <form id="form-logout" action="/logout" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button>Logout</button>
+                        <button class="logout-btn" form="form-logout" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>
                     </form>
                 </li>
             </ul> 

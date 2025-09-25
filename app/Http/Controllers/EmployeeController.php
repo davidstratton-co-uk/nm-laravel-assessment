@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Models\Company;
 
-use App\Http\Requests\StoreEmployeeRequest;
-use App\Http\Requests\UpdateEmployeeRequest;
-
 class EmployeeController
 {
     /**
