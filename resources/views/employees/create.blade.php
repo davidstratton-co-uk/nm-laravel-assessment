@@ -13,7 +13,12 @@
             </label>
             <label for="employee_company">
                 <span>Company</span>
-                <input type="text" id="employee_company" name="employee_company">
+                <select name="employee_company" id="employee_company">
+                    <option value="0">No Company</option>
+                    @foreach ( $companies as $company )
+                    <option value="{{ $company->id }}">{{ $company->name }}</option>    
+                    @endforeach
+                </select>
             </label>
             <label for="employee_phone">
                 <span>Phone</span>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Company;
 
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
@@ -24,7 +25,9 @@ class EmployeeController
      */
     public function create()
     {
-        return view('employees.create');
+        return view('employees.create', [
+            'companies' => Company::all()
+        ]);
     }
 
     /**
@@ -43,7 +46,7 @@ class EmployeeController
         $company = Employee::create([
             'first_name' => request('employee_first_name'),
             'last_name' => request('employee_last_name'),
-            'company_id' => request('employee_company'),
+            'company_id' => request('employee_company') == 0 ? NULL : request('employee_company') ,
             'phone' => request('employee_phone'),
             'email' => request('employee_email')
         ]);

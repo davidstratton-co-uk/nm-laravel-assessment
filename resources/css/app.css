@@ -10945,6 +10945,7 @@ h2 {
   grid-template-columns: 7rem 1fr;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
 }
 .form label span {
   font-weight: 600;
@@ -10956,6 +10957,7 @@ h2 {
   position: absolute;
   right: 0;
 }
+.form label select,
 .form label input {
   color: inherit;
   width: 100%;
@@ -10967,10 +10969,16 @@ h2 {
   padding: 0.5rem 1rem;
   /* Change Autocomplete styles in Chrome*/
 }
-.form label input:-webkit-autofill, .form label input:-webkit-autofill:hover, .form label input:-webkit-autofill:focus {
+.form label select:-webkit-autofill, .form label select:-webkit-autofill:hover, .form label select:-webkit-autofill:focus,
+.form label input:-webkit-autofill,
+.form label input:-webkit-autofill:hover,
+.form label input:-webkit-autofill:focus {
   -webkit-text-fill-color: #7e8ba3;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
+}
+.form label option {
+  color: black;
 }
 .form button {
   outline: 0;

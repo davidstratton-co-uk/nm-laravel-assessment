@@ -5,7 +5,11 @@
                 <dt>Name</dt>
                 <dd>{{ $employee->first_name }} {{ $employee->last_name }}</dt>
                 <dt>Company</dt>
-                <dd>{{ $employee->company->name }}</dt>
+                <dd>
+                    @if (isset($employee->company_id))<a href="/companies/{{ $employee->company_id }}">{{ $employee->company->name }}</a>
+                    @else No Company
+                    @endif
+                </dd>
                 <dt>Phone</dt>
                 <dd>{{ $employee->phone }}</dt>
                 <dt>Email</dt>
