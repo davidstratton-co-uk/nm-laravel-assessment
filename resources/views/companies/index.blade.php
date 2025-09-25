@@ -5,6 +5,7 @@
             <tr>
                 <th scope="col"></th>
                 <th scope="col">Name</th>
+                <th scope="col">Employees</th>
                 <th scope="col">E-Mail</th>
                 <th scope="col">Website</th>
                 <th scope="col"></th>
@@ -16,6 +17,7 @@
             <tr>
                 <td class="card-img--small"><img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt=" "></td>
                 <td><a href="/companies/{{ $company->id }}">{{ $company->name }}</a></td>
+                <td>{{  $company->employees_count }}</td>
                 <td><a href="mailto://{{ $company->email }}"">{{ $company->email }}</a></td>
                 <td><a href="https://{{ $company->website }}">{{ $company->website }}</a></td>
                 <td><a class="edit-btn" href="/companies/{{ $company->id }}/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>

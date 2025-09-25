@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use App\Models\Company;
 
 use App\Http\Requests\StoreCompanyRequest;
@@ -16,7 +17,7 @@ class CompanyController
     {
 
         return view('companies.index', [
-            'companies' => Company::paginate(10)
+            'companies' => Company::withCount('employees')->paginate(10)
         ]);
     }
 
