@@ -10,14 +10,20 @@ body {
     min-height: 100dvh;
     display: grid;
     grid-template-rows: max-content 1fr max-content;
+
+    > nav {
+        grid-row: 1;
+    }
+
+    > footer {
+        grid-row: 3;
+        margin-top: 2rem;
+        background-color: #28303b;
+        padding: .5rem 1rem;
+    }
 }
 
 main {
+    grid-row: 2;
     padding: 0 1rem
-}
-
-footer {
-    margin-top: 2rem;
-    background-color: #28303b;
-    padding: .5rem 1rem;
 }

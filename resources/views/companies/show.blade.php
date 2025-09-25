@@ -1,18 +1,13 @@
 <x-layout>
-    <div class="card-big">
-        <header class="card-heading">
-            <h2 class="edit-heading" >Viewing - {{ $company->name }} <a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
-            
-        </header>
+    <h2 class="edit-heading" >Viewing - {{ $company->name }} <a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
+    <div class="card-big">   
         <img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt="Logo of {{ $company->name }}">
         <dl>
-            <dt>E-Mail</dt>
-            <dd>{{ $company->email }}</dd>
-            <dt>Website</dt>
-            <dd>{{ $company->website }}</dd>
+            <dt>Email</dt><dd>{{ $company->email }}</dd>
+            <dt>Website</dt><dd>{{ $company->website }}</dd>
         </dl>
     </div>
-    <h2 class="edit-heading" >Employees <a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
+    <h2 class="edit-heading" >Employees<a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
     <table class="card-list">
         <thead>
             <th>First Name</th>

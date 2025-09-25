@@ -16,12 +16,12 @@
                 </a>
             </header>
             <ul class="nav-tabs">
-                <li><a href="/companies">Companies</a></li>
-                <li><a href="/employees">Employees</a></li>
+                <li class="{{ request()->is('companies') ? 'active' : '' }}"><a href="/companies">Companies</a></li>
+                <li class="{{ request()->is('employees') ? 'active' : '' }}"><a href="/employees">Employees</a></li>
             </ul>
-            <ul>
-                <li><a href="/companies/create">Add Company</a></li>
-                <li><a href="/employees/create">Add Employee</a></li>    
+            <ul class="nav-tabs">
+                <li class="{{ request()->is('companies/create') ? 'active' : ''  }}"><a href="/companies/create">Add Company</a></li>
+                <li class="{{ request()->is('employees/create') ? 'active' : ''  }}"><a href="/employees/create">Add Employee</a></li>    
                 <li class="logout-btn">
                     <form action="/logout" method="POST">
                         @csrf
@@ -35,9 +35,11 @@
         <main>
             {{ $slot }}
         </main>
+        @if (!request()->routeIs('login'))
         <footer>
             Designed by <a href="https://davidstratton.co.uk">David Stratton</a>
         </footer>
+        @endif
     </div>
 </body>
 </html>

@@ -4,11 +4,11 @@
         <form class="form" action="/companies/create" method="post">
             @csrf
             <label for="company_name">
-                <span>Company Name</span>
+                <span>Name</span>
                 <input type="text" id="company_name" name="company_name">
             </label>
             <label for="company_name">
-                <span>Company Logo</span>
+                <span>Logo</span>
                 <input type="text" id="company_logo" name="company_logo">
             </label>
             <label for="company_email">

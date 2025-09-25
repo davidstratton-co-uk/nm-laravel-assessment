@@ -15,3 +15,31 @@
     justify-items: center;
     margin-top: 2rem;
 }
+
+.card-big {
+    box-shadow: 10px 10px 20px 0px #000;
+    background-color: #1e242e;
+    width: max-content;
+    margin: auto;
+    padding: 2rem;
+    display: grid;
+    justify-items: center;
+    
+    dl {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: .5rem;  
+
+        dt {
+            font-weight: 600;
+            position: relative;
+            padding-right: 10px;
+
+            &::after {
+                content: ":";
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}
