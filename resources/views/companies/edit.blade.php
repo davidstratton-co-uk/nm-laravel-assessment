@@ -1,12 +1,12 @@
 <x-layout>
     <h2>Viewing - {{ $company->name }}</h2>
-    <form class="form" id="form-edit" class="edit-form" action="/companies/{{ $company->id }}/edit" method="post">
+    <form class="form" id="form-edit" class="edit-form" action="/companies/{{ $company->id }}/edit" method="post" enctype="multipart/form-data">
         @csrf
         @method("PATCH")
-        <img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt="Logo of {{ $company->name }}">
+        <img src="{{ asset('uploads/images/' . $company->logo) }}" alt="Logo of {{ $company->name }}">
         <label for="company_logo">
             <span>Logo</span>
-            <input type="text" id="company_logo" name="company_logo" value="{{ $company->logo }}">
+            <input type="file" name="company_logo" id="company_logo">
         </label>
         <label for="company_name">
             <span>Name</span>

@@ -20,7 +20,7 @@
                 <td><a href="/companies/{{ $company->id }}">{{ $company->name }}</a></td>
                 <td>{{  $company->employees_count }}</td>
                 <td><a href="mailto://{{ $company->email }}"">{{ $company->email }}</a></td>
-                <td><a href="https://{{ $company->website }}">{{ $company->website }}</a></td>
+                <td><a href="{{ $company->website }}">{{ $company->website }}</a></td>
                 <td>{{ $company->updated_at }}</td>
                 <td><a class="edit-btn" href="/companies/{{ $company->id }}/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
                 <td><button class="delete-btn" form="form-delete" formaction="/companies/{{  $company->id }}/del" type="submit"><i class="fa-solid fa-trash"></i></button></td>            </tr>

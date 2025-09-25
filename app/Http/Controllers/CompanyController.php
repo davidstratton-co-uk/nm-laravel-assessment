@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\Company;
+use Illuminate\Support\Facades\File;
 
 class CompanyController
 {
@@ -33,14 +34,13 @@ class CompanyController
     {
         request()->validate([
             'company_name' => ['required', 'min:3'],
-            'company_logo' => ['required','image','max:2048'],
+            'company_logo' => ['image','max:2048'],
             'company_email' => ['required','email'],
             'company_website' => ['required','url']
         ]);
 
         $logoName = time().'.'.request('company_logo')->extension();
         request('company_logo')->move(public_path('uploads/images'), $logoName);
-
 
         $company = Company::create([
             'name' => request('company_name'),
@@ -79,14 +79,27 @@ class CompanyController
     {
         request()->validate([
             'company_name' => ['required', 'min:3'],
-            'company_logo' => ['required'],
-            'company_email' => ['required'],
-            'company_website' => ['required']
+            'company_logo' => ['image','max:2048'],
+            'company_email' => ['required','email'],
+            'company_website' => ['required','url']
         ]);
+
+        if (request()->hasFile('company_logo')) {
+            if ($company->logo) {
+                $currentLogo = public_path('uploads/images/' . $company->logo);
+                if (File::exists($currentLogo)) {
+                    File::delete($currentLogo);
+                }
+            }
+
+        $logoName = time().'.'.request('company_logo')->extension();
+        request('company_logo')->move(public_path('uploads/images'), $logoName);
+
+        }
 
         $company->update([
             'name' => request('company_name'),
-            'logo' => request('company_logo'),
+            'logo' => $logoName,
             'email' => request('company_email'),
             'website' => request('company_website')
         ]);

@@ -10917,6 +10917,7 @@ h2 {
   padding: 2rem;
   display: grid;
   justify-items: center;
+  gap: 2rem;
 }
 .card-big dl {
   display: grid;
