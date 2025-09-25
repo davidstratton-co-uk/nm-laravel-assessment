@@ -16,7 +16,7 @@
         <tbody>
         @foreach ($companies as $company)
             <tr>
-                <td class="card-img--small"><img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt=" "></td>
+                <td class="card-img--small"><img src="{{ asset('/uploads/images/'.$company->logo) }}" alt=" "></td>
                 <td><a href="/companies/{{ $company->id }}">{{ $company->name }}</a></td>
                 <td>{{  $company->employees_count }}</td>
                 <td><a href="mailto://{{ $company->email }}"">{{ $company->email }}</a></td>

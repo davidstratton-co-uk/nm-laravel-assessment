@@ -19,7 +19,7 @@ class CompanyFactory extends Factory
         return [
             'name' => fake()->company,
             'email' => fake()->safeEmail,
-            'logo' => "logo-" . fake()->numberBetween(1,70) . ".webp",
+            'logo' => "default/" . fake()->numberBetween(1,62) . ".webp",
             'website' => fake()->url
         ];
     }

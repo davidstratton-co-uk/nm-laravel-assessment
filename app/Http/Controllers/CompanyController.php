@@ -33,19 +33,23 @@ class CompanyController
     {
         request()->validate([
             'company_name' => ['required', 'min:3'],
-            'company_logo' => ['required'],
+            'company_logo' => ['required','image','max:2048'],
             'company_email' => ['required','email'],
             'company_website' => ['required','url']
         ]);
 
+        $logoName = time().'.'.request('company_logo')->extension();
+        request('company_logo')->move(public_path('uploads/images'), $logoName);
+
+
         $company = Company::create([
             'name' => request('company_name'),
-            'logo' => request('company_logo'),
+            'logo' => $logoName,
             'email' => request('company_email'),
             'website' => request('company_website')
         ]);
 
-        return redirect('/companies/' . $company->id);
+        return redirect('/companies/' . $company->id)->with('Success', 'Company Created');
     }
 
     /**

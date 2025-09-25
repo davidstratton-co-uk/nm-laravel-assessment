@@ -1,7 +1,7 @@
 <x-layout>
     <h2 class="edit-heading" >Viewing - {{ $company->name }} <a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
     <div class="card-big">   
-        <img src="{{ Vite::asset("resources/images/companies/logos/$company->logo") }}" alt="Logo of {{ $company->name }}">
+        <img src="{{ url("$company->logo") }}" alt="Logo of {{ $company->name }}">
         <dl>
             <dt>Email</dt><dd>{{ $company->email }}</dd>
             <dt>Website</dt><dd>{{ $company->website }}</dd>

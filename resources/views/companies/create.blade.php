@@ -1,15 +1,15 @@
 <x-layout>
     <h2>Create Company</h2>
     <div class="form-container">
-        <form class="form" action="/companies/create" method="post">
+        <form class="form" action="/companies/create" method="post" enctype="multipart/form-data">
             @csrf
             <label for="company_name">
                 <span>Name</span>
                 <input type="text" id="company_name" name="company_name">
             </label>
-            <label for="company_name">
+            <label for="company_logo">
                 <span>Logo</span>
-                <input type="text" id="company_logo" name="company_logo">
+                <input type="file" name="company_logo" id="company_logo">
             </label>
             <label for="company_email">
                 <span>E-Mail</span>
