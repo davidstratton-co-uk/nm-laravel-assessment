@@ -36,6 +36,28 @@
             max-width: 50px;
         }
     }
+
+    .edit-btn {
+        color: #378f7b;
+        padding: .5rem;
+
+        &:hover {
+            border-radius: 50%;
+            outline: 1px solid black;
+        }
+    }
+
+    .delete-btn {
+        all: unset;
+        color: #8f3737;
+        cursor: pointer;
+        padding: .5rem;
+     
+        &:hover {
+            border-radius: 50%;
+            outline: 1px solid black;
+        }
+    }
 }
 
 .card-small {

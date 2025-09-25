@@ -10816,6 +10816,24 @@ h2 {
   max-height: 50px;
   max-width: 50px;
 }
+.card-list .edit-btn {
+  color: #378f7b;
+  padding: 0.5rem;
+}
+.card-list .edit-btn:hover {
+  border-radius: 50%;
+  outline: 1px solid black;
+}
+.card-list .delete-btn {
+  all: unset;
+  color: #8f3737;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.card-list .delete-btn:hover {
+  border-radius: 50%;
+  outline: 1px solid black;
+}
 
 .card-small {
   position: relative;
