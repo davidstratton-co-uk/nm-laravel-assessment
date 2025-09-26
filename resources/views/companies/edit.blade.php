@@ -38,6 +38,11 @@
                 @endforeach
             </ul>
         @endif
+        @session('success')
+            <ul class="msg">
+                <li class="msg-success">{{ $value }}</li>
+            </ul>
+        @endsession
     </form>
     <form form="form-delete" action="/companies/{{ $company->id }}" method="POST">
         @csrf
@@ -61,12 +66,12 @@
                 <td>{{ $employee->phone }}</td>
                 <td>{{ $employee->email }}</td>
                 <td><a href="/employees/{{ $employee->id }}/edit">Edit</a></td>
-                <td><button form="employee-remove" formaction="/employees/{{ $employee->id }}/editcompany">Remove</button></td>
+                <td><button type="submit" form="employee-unemploy" formaction="/employees/{{ $employee->id }}/unemploy">Delist</button></td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <form form="employee-remove" action="/companies/removeemployee" method="POST">
+    <form id="employee-unemploy" action="/employees/unemploy" method="POST">
         @csrf
         @method('PATCH')
     </form>

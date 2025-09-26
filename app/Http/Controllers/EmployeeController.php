@@ -97,6 +97,19 @@ class EmployeeController
     }
 
     /**
+     * Update the specified resource in storage.
+     */
+    public function unemploy(Employee $employee)
+    {
+
+        $employee->update([
+            'company_id' => NULL,
+        ]);
+
+        return redirect()->back()->with('success', 'Employee Delisted!');
+    }
+
+    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Employee $employee)
