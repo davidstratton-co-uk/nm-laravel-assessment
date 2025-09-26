@@ -1,7 +1,13 @@
 <x-layout>
     <h2 class="edit-heading" >Viewing - {{ $company->name }} <a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
     <div class="card-big">   
-        <img src="{{ asset('uploads/images/' . $company->logo) }}" alt="Logo of {{ $company->name }}">
+        <img src="
+        @if ($company->logo)
+            {{ asset('uploads/images/' . $company->logo) }}
+        @else 
+            {{ asset('uploads/images/default/logo-5.webp') }}
+        @endif
+         " alt="Logo of {{ $company->name }}">
         <dl>
             <dt>Email</dt><dd>{{ $company->email }}</dd>
             <dt>Website</dt><dd>{{ $company->website }}</dd>

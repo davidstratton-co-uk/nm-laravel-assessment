@@ -3,25 +3,32 @@
     <div class="form-container">
         <form class="form" action="/companies/create" method="post" enctype="multipart/form-data">
             @csrf
-            <label for="company_name">
+            <label for="name">
                 <span>Name</span>
-                <input type="text" id="company_name" name="company_name">
+                <input type="text" id="name" name="name" value="{{ old('name') }}">
             </label>
-            <label for="company_logo">
+            <label for="logo">
                 <span>Logo</span>
-                <input type="file" name="company_logo" id="company_logo">
+                <input type="file" name="logo" id="logo" value="{{ old('logo') }}">
             </label>
-            <label for="company_email">
+            <label for="email">
                 <span>E-Mail</span>
-                <input type="text" id="company_email" name="company_email">
+                <input type="text" id="email" name="email" value="{{ old('email') }}">
             </label>
-            <label for="company_website">
+            <label for="website">
                 <span>Website</span>
-                <input type="text" id="company_website" name="company_website">
+                <input type="text" id="website" name="website" value="{{ old('website') }}">
             </label>
             <div class="form-controls">
-                <button type="submit" id="company-create-btn" name="company-create-btn">Create Company</button>
+                <button type="submit" id="create-btn">Create Company</button>
             </div>
+            @if ($errors->any())
+            <ul class="msg">
+                @foreach ($errors->all() as $error )
+                <li class="msg-error">{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
         </form>
     </div>
 </x-layout>

@@ -11042,4 +11042,33 @@ h2 {
   grid-template-columns: max-content max-content;
   justify-content: center;
   gap: 4rem;
+}
+
+.msg {
+  list-style: none;
+  width: 100%;
+}
+.msg .msg-success,
+.msg .msg-error {
+  padding: 0.3rem;
+  padding-left: 1rem;
+  font-weight: 600;
+}
+.msg .msg-success:first-of-type,
+.msg .msg-error:first-of-type {
+  border-radius: 20px 20px 0 0;
+}
+.msg .msg-success:last-of-type,
+.msg .msg-error:last-of-type {
+  border-radius: 0 0 20px 20px;
+}
+.msg .msg-success:only-child,
+.msg .msg-error:only-child {
+  border-radius: 20px;
+}
+.msg .msg-success {
+  background-color: green;
+}
+.msg .msg-error {
+  background-color: red;
 }/*# sourceMappingURL=app.css.map */

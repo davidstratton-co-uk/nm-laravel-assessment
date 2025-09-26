@@ -1,0 +1,32 @@
+.msg {
+    list-style: none;
+    width: 100%;
+    
+    .msg-success,
+    .msg-error {
+        padding: .3rem;
+        padding-left: 1rem;
+        font-weight: 600;
+        
+        &:first-of-type {
+            border-radius: 20px 20px 0 0;
+        }
+
+        &:last-of-type {
+            border-radius:0 0 20px 20px;
+        }
+
+        &:only-child {
+            border-radius: 20px;
+        }
+
+    }
+
+    .msg-success {
+        background-color: green;
+    }
+
+    .msg-error {
+        background-color: red;
+    }
+}

@@ -33,19 +33,19 @@ class EmployeeController
     public function store()
     {
         request()->validate([
-            'employee_first_name' => ['required', 'min:3'],
-            'employee_last_name' => ['required'],
-            'employee_company' => ['required'],
-            'employee_phone' => ['required'],
-            'employee_email' => ['required']
+            'first_name' => ['required', 'min:3'],
+            'last_name' => ['required'],
+            'company_id' => ['required'],
+            'phone' => ['required'],
+            'email' => ['required']
         ]);
 
         $company = Employee::create([
-            'first_name' => request('employee_first_name'),
-            'last_name' => request('employee_last_name'),
-            'company_id' => request('employee_company') == 0 ? NULL : request('employee_company') ,
-            'phone' => request('employee_phone'),
-            'email' => request('employee_email')
+            'first_name' => request('first_name'),
+            'last_name' => request('last_name'),
+            'company_id' => request('company_id') == 0 ? NULL : request('company') ,
+            'phone' => request('phone'),
+            'email' => request('email')
         ]);
 
         return redirect('/employees/' . $company->id);
@@ -67,7 +67,8 @@ class EmployeeController
     public function edit(Employee $employee)
     {
         return view('employees.edit', [
-            'employee' => $employee
+            'employee' => $employee,
+            'companies' => Company::all()
         ]);
     }
 
@@ -77,19 +78,19 @@ class EmployeeController
     public function update(Employee $employee)
     {
         request()->validate([
-            'employee_first_name' => ['required', 'min:3'],
-            'employee_last_name' => ['required'],
-            'employee_company' => ['required'],
-            'employee_phone' => ['required'],
-            'employee_email' => ['required']
+            'first_name' => ['required', 'min:3'],
+            'last_name' => ['required'],
+            'company_id' => ['required'],
+            'phone' => ['required'],
+            'email' => ['required']
         ]);
 
         $employee->update([
-            'first_name' => request('employee_first_name'),
-            'last_name' => request('employee_last_name'),
-            'company_id' => request('employee_company'),
-            'phone' => request('employee_phone'),
-            'email' => request('employee_email')
+            'first_name' => request('first_name'),
+            'last_name' => request('last_name'),
+            'company_id' => request('company_id'),
+            'phone' => request('phone'),
+            'email' => request('email')
         ]);
 
         return redirect('/employees/' . $employee->id);

@@ -3,30 +3,50 @@
     <form class="form" id="form-edit" action="/employees/{{ $employee->id }}/edit" method="POST">
         @csrf
         @method('PATCH')
-        <label for="employee_first_name">
+        <label for="first_name">
             <span>First Name</span>
-            <input type="text" id="employee_first_name" name="employee_first_name" value="{{ $employee->first_name }}">
+            <input type="text" id="first_name" name="first_name" value="{{ old('first_name', $employee->first_name ) }}">
         </label>
-        <label for="employee_last_name">
+        <label for="last_name">
             <span>Last Name</span>
-            <input type="text" id="employee_last_name" name="employee_last_name" value="{{ $employee->last_name }}">
+            <input type="text" id="last_name" name="last_name" value="{{ old('last_name', $employee->last_name ) }}">
         </label>
-        <label for="employee_company">
+        <label for="company">
             <span>Company</span>
-            <input type="text" id="employee_company" name="employee_company" value="{{ $employee->company->id }}">
+            <select name="company_id" id="company_id">
+                <option value="0" 
+                    @if ( old('company_id', $employee->company_id) == "0")
+                        selected
+                    @endif
+                >No Company</option>
+                @foreach ( $companies as $company )
+                    <option value="{{ $company->id }}"
+                        @if ( old('company_id', $employee->company_id) == $company->id)
+                            selected
+                        @endif
+                    >{{ $company->name }}</option>    
+                @endforeach
+            </select>
         </label>
-        <label for="employee_phone">
+        <label for="phone">
             <span>Phone</span>
-            <input type="text" id="employee_phone" name="employee_phone" value="{{ $employee->phone }}">
+            <input type="text" id="phone" name="phone" value="{{ old('phone', $employee->phone ) }}">
         </label>
-        <label for="employee_email">
+        <label for="email">
             <span>Email</span>
-            <input type="text" id="employee_email" name="employee_email" value="{{ $employee->email }}">
+            <input type="text" id="email" name="email" value="{{ old('email', $employee->email ) }}">
         </label>
         <div class="edit-controls">
             <button form="form-edit" type="submit">Save Changes</Button>
             <button form="form-delete" type="submit">Delete Employee</Button>
         </div>
+        @if ($errors->any())
+            <ul class="msg">
+                @foreach ($errors->all() as $error )
+                <li class="msg-error">{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
     </form>
     <form id="form-delete" action="/employees/{{ $employee->id }}/del" method="POST">
         @csrf

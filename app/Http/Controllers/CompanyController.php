@@ -33,20 +33,24 @@ class CompanyController
     public function store()
     {
         request()->validate([
-            'company_name' => ['required', 'min:3'],
-            'company_logo' => ['image','max:2048'],
-            'company_email' => ['required','email'],
-            'company_website' => ['required','url']
+            'name' => ['required', 'min:3'],
+            'logo' => ['image','max:2048'],
+            'email' => ['required','email'],
+            'website' => ['required','url']
         ]);
 
-        $logoName = time().'.'.request('company_logo')->extension();
-        request('company_logo')->move(public_path('uploads/images'), $logoName);
+        $logoName = NULL;
+
+        if (request('logo')){
+            $logoName = time().'.'.request('logo')->extension();
+            request('logo')->move(public_path('uploads/images'), $logoName);
+        }
 
         $company = Company::create([
-            'name' => request('company_name'),
+            'name' => request('name'),
             'logo' => $logoName,
-            'email' => request('company_email'),
-            'website' => request('company_website')
+            'email' => request('email'),
+            'website' => request('website')
         ]);
 
         return redirect('/companies/' . $company->id)->with('Success', 'Company Created');
@@ -78,10 +82,10 @@ class CompanyController
     public function update(Company $company)
     {
         request()->validate([
-            'company_name' => ['required', 'min:3'],
-            'company_logo' => ['image','max:2048'],
-            'company_email' => ['required','email'],
-            'company_website' => ['required','url']
+            'name' => ['required', 'min:3'],
+            'logo' => ['image','max:2048'],
+            'email' => ['required','email'],
+            'website' => ['required','url']
         ]);
 
         if (request()->hasFile('company_logo')) {
@@ -92,16 +96,16 @@ class CompanyController
                 }
             }
 
-        $logoName = time().'.'.request('company_logo')->extension();
-        request('company_logo')->move(public_path('uploads/images'), $logoName);
+        $logoName = time().'.'.request('logo')->extension();
+        request('logo')->move(public_path('uploads/images'), $logoName);
 
         }
 
         $company->update([
-            'name' => request('company_name'),
+            'name' => request('name'),
             'logo' => $logoName,
-            'email' => request('company_email'),
-            'website' => request('company_website')
+            'email' => request('email'),
+            'website' => request('website')
         ]);
 
         return redirect('/companies/' . $company->id);
