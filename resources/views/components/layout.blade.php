@@ -17,8 +17,8 @@
             </header>
             <ul class="nav-tabs">
                 <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Dashboard</a></li>
-                <li class="{{ request()->is('companies') ? 'active' : '' }}"><a href="/companies">Companies</a></li>
-                <li class="{{ request()->is('employees') ? 'active' : '' }}"><a href="/employees">Employees</a></li>
+                <li class="{{ request()->routeis('companies') ? 'active' : '' }}"><a href="/companies">Companies</a></li>
+                <li class="{{ request()->routeis('employees') ? 'active' : '' }}"><a href="/employees">Employees</a></li>
             </ul>
             <ul class="nav-tabs">
                 <li class="{{ request()->is('companies/create') ? 'active' : ''  }}"><a href="/companies/create">Add Company</a></li>

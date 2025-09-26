@@ -17,7 +17,17 @@
         <tbody>
             @foreach ( $employees as $employee)
             <tr>
-                <td class="card-img--small"><a href="/employees/{{ $employee->id }}"><i class="fa-solid fa-circle-user"></i></a></td>
+                <td class="card-img--small">
+                    <img src="
+                        @if ($employee->avatar)
+                            {{ asset('uploads/images/' . $employee->avatar) }}
+                        @else 
+                            {{ asset('uploads/images/default/avatar.webp') }}
+                        @endif
+                        "
+                        alt="Profile Picture of {{ $employee->name }}
+                     ">
+                </td>
                 <td><a href="/employees/{{ $employee->id }}">{{ $employee->first_name }}</a></td>
                 <td><a href="/employees/{{ $employee->id }}">{{ $employee->last_name }}</a></td>
                 <td>
@@ -29,7 +39,7 @@
                 <td><a href="mailto://{{ $employee->email }}">{{ $employee->email }}</a></td>
                 <td>{{ $employee->updated_at }}</td>
                 <td><a class="edit-btn" href="/employees/{{ $employee->id }}/edit"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                <td><button class="delete-btn" form="form-delete" formaction="/employees/{{  $employee->id }}/del" type="submit"><i class="fa-solid fa-trash"></i></button></td>
+                <td><button class="delete-btn" form="form-delete" formaction="/employees/{{  $employee->id }}" type="submit"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
             @endforeach
         </tbody>

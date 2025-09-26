@@ -48,7 +48,7 @@
             </ul>
         @endif
     </form>
-    <form id="form-delete" action="/employees/{{ $employee->id }}/del" method="POST">
+    <form id="form-delete" action="/employees/{{ $employee->id }}" method="POST">
         @csrf
         @method('DELETE')
     </form>

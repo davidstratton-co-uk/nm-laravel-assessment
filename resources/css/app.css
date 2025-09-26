@@ -10715,14 +10715,13 @@ main {
 }
 #form-login .form-login-btn {
   outline: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 4rem;
   border: 1px solid #242c37;
   border-radius: 999px;
   background-color: transparent;
   text-align: center;
   background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
   color: #fff;
-  width: 100%;
 }
 
 #site-nav {
@@ -11067,8 +11066,8 @@ h2 {
   border-radius: 20px;
 }
 .msg .msg-success {
-  background-color: green;
+  background-color: #378f7b;
 }
 .msg .msg-error {
-  background-color: red;
+  background-color: #8f3737;
 }/*# sourceMappingURL=app.css.map */
