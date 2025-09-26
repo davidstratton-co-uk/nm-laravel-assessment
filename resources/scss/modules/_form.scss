@@ -1,5 +1,6 @@
 .form-container {
     display: flex;
+    height: 100%;
 }
 
 .form {
@@ -10,6 +11,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    width: fit-content;
+    background-color: #1e242e;
 
     label {
         display: grid;
@@ -19,6 +22,7 @@
         width: 100%;
 
         span {
+            color: #c8c8c8;
             font-weight: 600;
             position: relative;
             padding-right: 10px;
@@ -32,11 +36,11 @@
 
         select,
         input {
-            color: inherit;
+            color: #c8c8c8;
             width: 100%;
             border: 1px solid #242c37;
             border-radius: 999px;
-            background-color: transparent;
+            background-color: #354152;
             text-align: center;
             outline: 0;
             padding: 0.5rem 1rem;
@@ -46,14 +50,14 @@
             &:-webkit-autofill:hover, 
             &:-webkit-autofill:focus
             {
-                -webkit-text-fill-color: #7e8ba3;
+                -webkit-text-fill-color: #c8c8c8;
                 transition: background-color 5000s ease-in-out 0s;
             }
 
         }
 
         option {
-            color: black;
+            color: #c8c8c8;
         }
 
     }

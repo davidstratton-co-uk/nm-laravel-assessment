@@ -12,6 +12,11 @@
             <dt>Email</dt><dd>{{ $company->email }}</dd>
             <dt>Website</dt><dd>{{ $company->website }}</dd>
         </dl>
+        @session('success')
+            <ul class="msg">
+                <li class="msg-success">{{ $value }}</li>
+            </ul>
+        @endsession
     </div>
     <h2 class="edit-heading" >Employees<a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
     <table class="card-list">

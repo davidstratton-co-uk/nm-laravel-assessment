@@ -10674,56 +10674,6 @@ main {
   padding: 0 1rem;
 }
 
-#login {
-  display: flex;
-  height: 100%;
-}
-
-#form-login {
-  box-shadow: 10px 10px 20px 0px #000;
-  margin: auto;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-#form-login h2 {
-  font-size: 2.5rem;
-}
-#form-login label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-#form-login label input {
-  color: inherit;
-  width: 100%;
-  border: 1px solid #242c37;
-  border-radius: 999px;
-  background-color: transparent;
-  text-align: center;
-  outline: 0;
-  padding: 0.5rem 1rem;
-  /* Change Autocomplete styles in Chrome*/
-}
-#form-login label input:-webkit-autofill, #form-login label input:-webkit-autofill:hover, #form-login label input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #7e8ba3;
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s;
-}
-#form-login .form-login-btn {
-  outline: 0;
-  padding: 0.5rem 4rem;
-  border: 1px solid #242c37;
-  border-radius: 999px;
-  background-color: transparent;
-  text-align: center;
-  background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
-  color: #fff;
-}
-
 #site-nav {
   display: grid;
   grid-template-columns: 1fr;
@@ -10964,6 +10914,7 @@ h2 {
 
 .form-container {
   display: flex;
+  height: 100%;
 }
 
 .form {
@@ -10974,6 +10925,9 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #1e242e;
 }
 .form label {
   display: grid;
@@ -10983,6 +10937,7 @@ h2 {
   width: 100%;
 }
 .form label span {
+  color: #c8c8c8;
   font-weight: 600;
   position: relative;
   padding-right: 10px;
@@ -10994,11 +10949,11 @@ h2 {
 }
 .form label select,
 .form label input {
-  color: inherit;
+  color: #c8c8c8;
   width: 100%;
   border: 1px solid #242c37;
   border-radius: 999px;
-  background-color: transparent;
+  background-color: #354152;
   text-align: center;
   outline: 0;
   padding: 0.5rem 1rem;
@@ -11008,12 +10963,12 @@ h2 {
 .form label input:-webkit-autofill,
 .form label input:-webkit-autofill:hover,
 .form label input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #7e8ba3;
+  -webkit-text-fill-color: #c8c8c8;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
 .form label option {
-  color: black;
+  color: #c8c8c8;
 }
 .form button {
   outline: 0;

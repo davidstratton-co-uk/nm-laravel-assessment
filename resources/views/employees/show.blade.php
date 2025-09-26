@@ -15,6 +15,11 @@
                 <dt>Email</dt>
                 <dd>{{ $employee->email }}</dt>
             </dl>
+            @session('success')
+                <ul class="msg">
+                    <li class="msg-success">{{ $value }}</li>
+                </ul>
+            @endsession
         </div>
         <div class="card-controls">
             <a class="edit-link" href="/employees/{{ $employee->id }}/edit">Switch to Edit User</a>

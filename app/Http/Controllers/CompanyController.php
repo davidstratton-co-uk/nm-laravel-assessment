@@ -53,7 +53,7 @@ class CompanyController
             'website' => request('website')
         ]);
 
-        return redirect('/companies/' . $company->id)->with('Success', 'Company Created');
+        return redirect('/companies/' . $company->id)->with('success', 'Company Created');
     }
 
     /**
@@ -88,17 +88,21 @@ class CompanyController
             'website' => ['required','url']
         ]);
 
+        $logoName = $company->logo;
+
         if (request()->hasFile('company_logo')) {
+            
             if ($company->logo) {
+            
                 $currentLogo = public_path('uploads/images/' . $company->logo);
+            
                 if (File::exists($currentLogo)) {
                     File::delete($currentLogo);
                 }
             }
 
-        $logoName = time().'.'.request('logo')->extension();
-        request('logo')->move(public_path('uploads/images'), $logoName);
-
+            $logoName = time().'.'.request('logo')->extension();
+            request('logo')->move(public_path('uploads/images'), $logoName);
         }
 
         $company->update([
@@ -108,7 +112,7 @@ class CompanyController
             'website' => request('website')
         ]);
 
-        return redirect('/companies/' . $company->id);
+        return redirect('/companies/' . $company->id)->with('success', 'Company Updated!');
     }
 
     /**

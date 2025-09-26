@@ -48,7 +48,7 @@ class EmployeeController
             'email' => request('email')
         ]);
 
-        return redirect('/employees/' . $company->id);
+        return redirect('/employees/' . $company->id)->with('success', 'Employee Created!');
     }
 
     /**
@@ -93,7 +93,7 @@ class EmployeeController
             'email' => request('email')
         ]);
 
-        return redirect('/employees/' . $employee->id);
+        return redirect('/employees/' . $employee->id)->with('success', 'Employee Updated!');
     }
 
     /**

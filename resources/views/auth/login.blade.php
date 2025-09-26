@@ -1,6 +1,6 @@
 <x-layout>
-        <div id="login">
-            <form id="form-login" action="/login" method="POST">
+        <div class="form-container">
+            <form class="form" id="form-login" action="/login" method="POST">
                 @csrf
                     <img src="{{ asset('uploads/images/default/avatar.webp') }}" alt=" ">
                 <h2>Login</h2>
