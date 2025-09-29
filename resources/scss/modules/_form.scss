@@ -1,3 +1,5 @@
+@use '../helpers/media-query' as mq;
+
 .form-container {
     display: flex;
     height: 100%;
@@ -6,7 +8,7 @@
 .form {
     box-shadow: 10px 10px 20px 0px #000;
     margin: auto;
-    padding: 3rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,24 +16,40 @@
     width: fit-content;
     background-color: #1e242e;
 
+    @include mq.set-breakpoint('small') {
+        padding: 3rem;
+    }
+
     label {
         display: grid;
-        grid-template-columns: 7rem 1fr;
+        grid-template-columns: 1fr;
         align-items: center;
         gap: .5rem;
         width: 100%;
+
+        @include mq.set-breakpoint('small') {
+            grid-template-columns: 7rem 1fr;
+            justify-items: left;
+        }
 
         span {
             color: #c8c8c8;
             font-weight: 600;
             position: relative;
-            padding-right: 10px;
+            width: 100%;
+            text-align: center;
 
-            &::after {
-                content: ":";
-                position: absolute;
-                right: 0;
+            @include mq.set-breakpoint('small') {
+                padding-right: 10px;
+                text-align: left;
+                
+                &::after {
+                    content: ":";
+                    position: absolute;
+                    right: 0;
+                }
             }
+
         }
 
         select,

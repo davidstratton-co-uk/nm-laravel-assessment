@@ -12,8 +12,31 @@ class EmployeeController
      */
     public function index()
     {
+
+        if (request('orderby')) {
+
+            $sortable_columns = ['first_name', 'last_name', 'company_id', 'email', 'phone', 'updated_at'];
+
+            if (in_Array(request('orderby'), $sortable_columns)) {
+
+                if (request('order') === 'desc' or request('order') === 'dsc' ) {
+                    $query = Employee::orderBy(request('orderby'), 'desc');
+                } else {
+                    $query = Employee::orderBy(request('orderby'), 'asc');
+                }
+
+           }
+
+           $query = $query->paginate(10)->withQueryString();
+
+       } else {
+
+        $query = Employee::paginate(10)->withQueryString();
+
+       }
+
         return view('employees.index', [
-            'employees' => Employee::paginate(10)
+            'employees' => $query
         ]);
     }
 

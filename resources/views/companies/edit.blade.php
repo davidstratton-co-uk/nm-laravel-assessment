@@ -49,6 +49,7 @@
         @method('DELETE')
     </form>
     <h2>Employees</h2>
+    <div class="table-box">
     <table class="card-list">
         <thead>
             <th>First Name</th>
@@ -71,6 +72,7 @@
             @endforeach
         </tbody>
     </table>
+    <div class="table-box">
     <form id="employee-unemploy" action="/employees/unemploy" method="POST">
         @csrf
         @method('PATCH')

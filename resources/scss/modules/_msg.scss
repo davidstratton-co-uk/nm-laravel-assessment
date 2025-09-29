@@ -1,3 +1,5 @@
+@use '../helpers/media-query' as mq;
+
 .msg {
     list-style: none;
     width: 100%;

@@ -3,76 +3,169 @@
 #site-nav {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 0 0 0;
     background-color: #1e242e;
-    justify-items: center;
+
+    @include mq.set-breakpoint('small') {
+        grid-template-columns: 1fr max-content; 
+    }
+
+    @include mq.set-breakpoint('medium') {
+        grid-template-columns: 1fr 1fr 1fr max-content; 
+    }
 
     @include mq.set-breakpoint('large') {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: max-content 1fr 1fr max-content; 
     }
 
-    a {
-        color: #c8c8c8;
-        font-weight: 600;
+    #nav-header {
+        padding: 0 1rem;
+        grid-row: 1;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        @include mq.set-breakpoint('small') {
+            justify-content: left;
+            padding: 0 0 0 1rem;
+        }
+
+        @include mq.set-breakpoint('medium') {
+            grid-column: span 3;
+        }
+
+        @include mq.set-breakpoint('x-large') {  
+            grid-column: 1;
+        }
+
+        img {
+            height: 50px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
     }
-}
 
-#site-header {
-    display: flex;
-    gap: .5rem;
+    .nav-button {
+        padding: 0 1rem;
+        grid-row: 2;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-column: -1 / -2;
 
-    h1 {
-        font-size: 2rem;
+        @include mq.set-breakpoint('small') {
+            padding: 0 1rem 0 0;
+            grid-row: 1;
+            justify-self: right; 
+        }
+
+        .logout-btn {
+            background-color: #c8c8c8;
+            border-radius: 30px;
+            padding: .5rem;
+            cursor: pointer;
+            display: flex;
+            gap: .2rem;
+
+            &:hover {
+                outline: 1px solid #c8c8c8;
+                outline-offset: .2rem;
+            }
+        }
     }
-}
 
-#site-nav ul {
-    display: none;    
-    list-style: none;
-    gap: 2rem;
-    justify-self: end;
-    text-transform: uppercase;
+    .nav-lists {
+        margin-top: 1rem;
 
-    
-    @include mq.set-breakpoint('large') {
-        display: flex;    
-    }
+        @include mq.set-breakpoint('medium') {  
+            grid-column: 1;
+            padding: 0 0 0 1rem;
+        }
 
-    &.nav-tabs {
-        justify-self: center;
-        margin-top: .5rem;
-        margin-bottom: -1rem;
+        @include mq.set-breakpoint('x-large') {  
+            grid-column: 1;
+            padding: 0 0 0 1rem;
+        }
 
         > li {
+            padding: 1rem 1rem;
+        }
+    }
+
+    .nav-create {
+        background-color: #354152;
+        padding: 1rem;
+
+        @include mq.set-breakpoint('medium') {  
+            margin-top: 1rem;
+            grid-column: 2;
+            background-color: inherit;
+            padding: 0 1rem 0 0;
+        }
+    }
+
+    .nav-lists,
+    .nav-create {
+        @include mq.set-breakpoint('small') {
+            grid-column: span 2; 
+        }
+
+        @include mq.set-breakpoint('medium') {
+            justify-self: center;
+        }
+
+        @include mq.set-breakpoint('x-large') {
+            grid-column: span 1;
+        }
+    }
+
+    ul {
+        list-style: none;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center; 
+
+        @include mq.set-breakpoint('medium') {  
+            justify-content: unset;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            justify-self: center;
+            // margin-top: .5rem;
             border-radius: 10px 10px 0 0;
+
+            &.active {
+                background-color: #354152;
+            }
         }
 
-        .active {
-            background-color: #354152;
-        }
     }
+    
 
-    li {
+    .icon-swap {
         display: flex;
-        align-items: center;
-        padding: 0 1rem;
-    }
-
-    .logout-btn {
-        background-color: #c8c8c8;
-        border-radius: 30px;
-        padding: .5rem;
-        cursor: pointer;
-        display: flex;
+        align-items: baseline;
         gap: .2rem;
 
-        &:hover {
-            outline: 1px solid #c8c8c8;
-            outline-offset: .2rem;
+        > span {
+            display: none;
+
+            @include mq.set-breakpoint('small') {
+                display: inline-block;
+            }
+
+        }
+
+        @include mq.set-breakpoint('small') {
+
         }
 
     }
-
 }
 

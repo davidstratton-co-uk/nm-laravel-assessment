@@ -14,8 +14,27 @@ class CompanyController
     public function index()
     {
 
+        $query = Company::withCount('employees');
+
+        if (request('orderby')) {
+
+            $sortable_columns = ['name', 'employees_count', 'email', 'updated_at'];
+
+            if (in_Array(request('orderby'), $sortable_columns)) {
+
+                if (request('order') === 'desc' or request('order') === 'dsc' ) {
+                    $query = $query->orderBy(request('orderby'), 'desc');
+                } else {
+                    $query = $query->orderBy(request('orderby'), 'asc');
+                }
+
+           }
+       }
+        
+        $query = $query->paginate(10)->withQueryString();
+
         return view('companies.index', [
-            'companies' => Company::withCount('employees')->paginate(10)
+            'companies' => $query
         ]);
     }
 

@@ -10,27 +10,28 @@
     <div id="site-container">
         @if (!request()->routeIs('login'))
         <nav id="site-nav">
-            <header id="site-header">
+            <header id="nav-header">
+                <img src="{{ asset('uploads/images/default/avatar.webp') }}" alt=" ">
                 <a href="/">
                     <h1>Laravel Assessment</h1>
                 </a>
             </header>
-            <ul class="nav-tabs">
-                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="/">Dashboard</a></li>
+            <ul class="nav-lists">
+                <li class="{{ request()->is('/') ? 'active' : '' }}"><a class="icon-swap" href="/"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
                 <li class="{{ request()->routeis('companies') ? 'active' : '' }}"><a href="/companies">Companies</a></li>
                 <li class="{{ request()->routeis('employees') ? 'active' : '' }}"><a href="/employees">Employees</a></li>
             </ul>
-            <ul class="nav-tabs">
-                <li class="{{ request()->is('companies/create') ? 'active' : ''  }}"><a href="/companies/create">Add Company</a></li>
-                <li class="{{ request()->is('employees/create') ? 'active' : ''  }}"><a href="/employees/create">Add Employee</a></li>    
-                <li>
-                    <form id="form-logout" action="/logout" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button class="logout-btn" form="form-logout" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>
-                    </form>
-                </li>
-            </ul> 
+            <ul class="nav-create">
+                <li class="{{ request()->is('companies/create') ? 'active' : ''  }}"><a class="icon-swap" href="/companies/create"><i class="fa-solid fa-square-plus"></i>Company</a></li>
+                <li class="{{ request()->is('employees/create') ? 'active' : ''  }}"><a class="icon-swap" href="/employees/create"><i class="fa-solid fa-square-plus"></i>Employee</a></li>    
+            </ul>
+            <div class="nav-button">
+                <form id="form-logout" action="/logout" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="logout-btn" form="form-logout" type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></button>
+                </form>
+            </div> 
         </nav>
         @endif
         <main>

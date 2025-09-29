@@ -1,6 +1,13 @@
+@use '../helpers/media-query' as mq;
+
 .dashboard {
     display: grid;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: 1fr;
     justify-content: center;
-    gap: 4rem;
+    gap: 1rem;
+
+    @include mq.set-breakpoint('large') {
+        grid-template-columns: max-content max-content;
+        gap: 3rem;
+    }
 }

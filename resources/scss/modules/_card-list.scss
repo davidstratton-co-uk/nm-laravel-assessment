@@ -1,5 +1,14 @@
-.card-list {
+@use '../helpers/media-query' as mq;
+.table-box {
+    width: 100%;
+    max-width: fit-content;
+    overflow:auto;
+    margin: auto;
     box-shadow: 10px 10px 20px 0px #000;
+}
+
+.card-list {
+   
     background-color: #1e242e;
     margin: auto;
 

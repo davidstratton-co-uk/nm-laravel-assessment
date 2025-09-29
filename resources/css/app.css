@@ -10672,63 +10672,76 @@ body {
 main {
   grid-row: 2;
   padding: 0 1rem;
+  max-width: 100dvw;
 }
 
 #site-nav {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 0 0 0;
   background-color: #1e242e;
-  justify-items: center;
+}
+@media only screen and (min-width: 576px) {
+  #site-nav {
+    grid-template-columns: 1fr max-content;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #site-nav {
+    grid-template-columns: 1fr 1fr 1fr max-content;
+  }
 }
 @media only screen and (min-width: 992px) {
   #site-nav {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: max-content 1fr 1fr max-content;
   }
 }
-#site-nav a {
-  color: #c8c8c8;
-  font-weight: 600;
-}
-
-#site-header {
+#site-nav #nav-header {
+  padding: 0 1rem;
+  grid-row: 1;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
-#site-header h1 {
+@media only screen and (min-width: 576px) {
+  #site-nav #nav-header {
+    justify-content: left;
+    padding: 0 0 0 1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #site-nav #nav-header {
+    grid-column: span 3;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #site-nav #nav-header {
+    grid-column: 1;
+  }
+}
+#site-nav #nav-header img {
+  height: 50px;
+}
+#site-nav #nav-header h1 {
   font-size: 2rem;
 }
-
-#site-nav ul {
-  display: none;
-  list-style: none;
-  gap: 2rem;
-  justify-self: end;
-  text-transform: uppercase;
+#site-nav .nav-button {
+  padding: 0 1rem;
+  grid-row: 2;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-column: -1/-2;
 }
-@media only screen and (min-width: 992px) {
-  #site-nav ul {
-    display: flex;
+@media only screen and (min-width: 576px) {
+  #site-nav .nav-button {
+    padding: 0 1rem 0 0;
+    grid-row: 1;
+    justify-self: right;
   }
 }
-#site-nav ul.nav-tabs {
-  justify-self: center;
-  margin-top: 0.5rem;
-  margin-bottom: -1rem;
-}
-#site-nav ul.nav-tabs > li {
-  border-radius: 10px 10px 0 0;
-}
-#site-nav ul.nav-tabs .active {
-  background-color: #354152;
-}
-#site-nav ul li {
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-}
-#site-nav ul .logout-btn {
+#site-nav .nav-button .logout-btn {
   background-color: #c8c8c8;
   border-radius: 30px;
   padding: 0.5rem;
@@ -10736,11 +10749,92 @@ main {
   display: flex;
   gap: 0.2rem;
 }
-#site-nav ul .logout-btn:hover {
+#site-nav .nav-button .logout-btn:hover {
   outline: 1px solid #c8c8c8;
   outline-offset: 0.2rem;
 }
-
+#site-nav .nav-lists {
+  margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  #site-nav .nav-lists {
+    grid-column: 1;
+    padding: 0 0 0 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #site-nav .nav-lists {
+    grid-column: 1;
+    padding: 0 0 0 1rem;
+  }
+}
+#site-nav .nav-lists > li {
+  padding: 1rem 1rem;
+}
+#site-nav .nav-create {
+  background-color: #354152;
+  padding: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  #site-nav .nav-create {
+    margin-top: 1rem;
+    grid-column: 2;
+    background-color: inherit;
+    padding: 0 1rem 0 0;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #site-nav .nav-lists,
+  #site-nav .nav-create {
+    grid-column: span 2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #site-nav .nav-lists,
+  #site-nav .nav-create {
+    justify-self: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #site-nav .nav-lists,
+  #site-nav .nav-create {
+    grid-column: span 1;
+  }
+}
+#site-nav ul {
+  list-style: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  #site-nav ul {
+    justify-content: unset;
+  }
+}
+#site-nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-self: center;
+  border-radius: 10px 10px 0 0;
+}
+#site-nav ul li.active {
+  background-color: #354152;
+}
+#site-nav .icon-swap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+#site-nav .icon-swap > span {
+  display: none;
+}
+@media only screen and (min-width: 576px) {
+  #site-nav .icon-swap > span {
+    display: inline-block;
+  }
+}
 h2 {
   margin: 2rem 0 1rem 0;
   font-size: 3rem;
@@ -10748,8 +10842,16 @@ h2 {
   text-align: center;
 }
 
-.card-list {
+.table-box {
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  overflow: auto;
+  margin: auto;
   box-shadow: 10px 10px 20px 0px #000;
+}
+
+.card-list {
   background-color: #1e242e;
   margin: auto;
 }
@@ -10884,6 +10986,12 @@ h2 {
   right: 0;
 }
 
+.card-big img,
+.form img {
+  width: 100%;
+  padding: 2rem;
+}
+
 .pagination {
   margin-top: 2rem;
   display: grid;
@@ -10920,7 +11028,7 @@ h2 {
 .form {
   box-shadow: 10px 10px 20px 0px #000;
   margin: auto;
-  padding: 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10929,23 +11037,41 @@ h2 {
   width: fit-content;
   background-color: #1e242e;
 }
+@media only screen and (min-width: 576px) {
+  .form {
+    padding: 3rem;
+  }
+}
 .form label {
   display: grid;
-  grid-template-columns: 7rem 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 0.5rem;
   width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  .form label {
+    grid-template-columns: 7rem 1fr;
+    justify-items: left;
+  }
 }
 .form label span {
   color: #c8c8c8;
   font-weight: 600;
   position: relative;
-  padding-right: 10px;
+  width: 100%;
+  text-align: center;
 }
-.form label span::after {
-  content: ":";
-  position: absolute;
-  right: 0;
+@media only screen and (min-width: 576px) {
+  .form label span {
+    padding-right: 10px;
+    text-align: left;
+  }
+  .form label span::after {
+    content: ":";
+    position: absolute;
+    right: 0;
+  }
 }
 .form label select,
 .form label input {
@@ -10993,9 +11119,15 @@ h2 {
 
 .dashboard {
   display: grid;
-  grid-template-columns: max-content max-content;
+  grid-template-columns: 1fr;
   justify-content: center;
-  gap: 4rem;
+  gap: 1rem;
+}
+@media only screen and (min-width: 992px) {
+  .dashboard {
+    grid-template-columns: max-content max-content;
+    gap: 3rem;
+  }
 }
 
 .msg {

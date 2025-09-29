@@ -1,3 +1,5 @@
+@use '../helpers/media-query' as mq;
+
 .edit-heading .edit-link {
     line-height: 3.4;
     position: absolute;
@@ -42,5 +44,14 @@
                 right: 0;
             }
         }
+    }
+}
+
+.card-big,
+.form {
+    img {
+    
+        width: 100%;
+        padding: 2rem;
     }
 }

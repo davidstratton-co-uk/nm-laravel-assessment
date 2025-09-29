@@ -1,3 +1,5 @@
+@use '../helpers/media-query' as mq;
+
 .pagination {
     margin-top: 2rem;
     display: grid;
