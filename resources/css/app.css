@@ -11106,6 +11106,7 @@ h2 {
   background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
   color: black;
   width: 100%;
+  cursor: pointer;
 }
 .form .edit-controls {
   display: grid;
@@ -11157,4 +11158,33 @@ h2 {
 }
 .msg .msg-error {
   background-color: #8f3737;
+}
+
+.sortable-active--desc:after {
+  font-family: "Font Awesome 7 Free";
+  content: "\f0dd";
+}
+.sortable-active--desc:hover:after {
+  content: "\f0de";
+}
+
+.sortable-active--asc:after {
+  font-family: "Font Awesome 7 Free";
+  content: "\f0de";
+}
+.sortable-active--asc:hover:after {
+  content: "\f0dd";
+}
+
+.sortable-active--asc,
+.sortable-active--desc {
+  text-decoration: underline;
+}
+
+.sortable-inactive:after {
+  font-family: "Font Awesome 7 Free";
+  content: "\f0dc";
+}
+.sortable-inactive:hover:after {
+  content: "\f0de";
 }/*# sourceMappingURL=app.css.map */

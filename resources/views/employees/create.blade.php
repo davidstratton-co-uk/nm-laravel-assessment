@@ -1,3 +1,7 @@
+<?php
+// FIXME: Company_ID not being Added to Database Row
+?>
+
 <x-layout>
     <h2>Creating Employee</h2>
     <form class="form" action="/employees/create" method="POST">

@@ -1,0 +1,38 @@
+.sortable-active--desc {
+
+    &:after {
+        font-family: "Font Awesome 7 Free";
+        content: "\f0dd";
+    }
+
+    &:hover:after {
+        content: "\f0de";
+    }
+}
+
+.sortable-active--asc {
+    &:after {
+        font-family: "Font Awesome 7 Free";
+        content: "\f0de";
+    }
+
+    &:hover:after {
+        content: "\f0dd";
+    }
+}
+
+.sortable-active--asc,
+.sortable-active--desc {
+    text-decoration: underline;
+}
+
+.sortable-inactive {
+    &:after {
+        font-family: "Font Awesome 7 Free";
+        content: "\f0dc";
+    }
+
+    &:hover:after {
+        content: "\f0de";
+    }
+}

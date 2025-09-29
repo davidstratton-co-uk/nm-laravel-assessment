@@ -1,3 +1,9 @@
+<?php
+// TODO: Add Existing Employee to Company
+// TODO: Create New Employee to Company Pre Populate Company ID
+// FIXME: Delete Button Not Working
+?>
+
 <x-layout>
     <h2>Viewing - {{ $company->name }}</h2>
     <form class="form" id="form-edit" class="edit-form" action="/companies/{{ $company->id }}/edit" method="post" enctype="multipart/form-data">
