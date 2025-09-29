@@ -66,7 +66,7 @@ class EmployeeController
         $company = Employee::create([
             'first_name' => request('first_name'),
             'last_name' => request('last_name'),
-            'company_id' => request('company_id') == 0 ? NULL : request('company') ,
+            'company_id' => request('company_id') === "0" ? NULL : request('company_id') ,
             'phone' => request('phone'),
             'email' => request('email')
         ]);

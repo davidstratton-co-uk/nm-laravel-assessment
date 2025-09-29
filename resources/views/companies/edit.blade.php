@@ -1,7 +1,7 @@
 <?php
 // TODO: Add Existing Employee to Company
 // TODO: Create New Employee to Company Pre Populate Company ID
-// FIXME: Delete Button Not Working
+// TODO: Add Company Delete Successful Confirmation
 ?>
 
 <x-layout>
@@ -50,7 +50,7 @@
             </ul>
         @endsession
     </form>
-    <form form="form-delete" action="/companies/{{ $company->id }}" method="POST">
+    <form id="form-delete" action="/companies/{{ $company->id }}" method="POST">
         @csrf
         @method('DELETE')
     </form>

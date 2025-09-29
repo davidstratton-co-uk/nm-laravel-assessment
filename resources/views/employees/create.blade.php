@@ -1,7 +1,3 @@
-<?php
-// FIXME: Company_ID not being Added to Database Row
-?>
-
 <x-layout>
     <h2>Creating Employee</h2>
     <form class="form" action="/employees/create" method="POST">
@@ -21,7 +17,9 @@
                 @if ( old('company_id') == "0" )
                     selected
                 @endif
-            >No Company</option>
+            >
+            No Company
+            </option>
             @foreach ( $companies as $company )
                 <option value="{{ $company->id }}"
                     @if ( old('company_id') == $company->id )
