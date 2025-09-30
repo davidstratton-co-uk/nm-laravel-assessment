@@ -14,7 +14,7 @@
             <span>Company</span>
         <select name="company_id" id="company_id">
             <option value="0" 
-                @if ( old('company_id') === "0")
+                @if ( old('company_id') == "0")
                     selected
                 @endif
             >
