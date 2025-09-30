@@ -14,7 +14,7 @@
             <span>Company</span>
         <select name="company_id" id="company_id">
             <option value="0" 
-                @if ( old('company_id') == "0" )
+                @if ( old('company_id') === "0")
                     selected
                 @endif
             >
@@ -22,7 +22,7 @@
             </option>
             @foreach ( $companies as $company )
                 <option value="{{ $company->id }}"
-                    @if ( old('company_id') == $company->id )
+                    @if ( old('company_id') == $company->id || app('request')->input('company_id') == $company->id )
                         selected
                     @endif
                 >{{ $company->name }}</option>    

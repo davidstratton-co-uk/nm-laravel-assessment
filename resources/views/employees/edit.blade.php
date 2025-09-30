@@ -1,6 +1,3 @@
-<?php
-// FIXME: Return to company edit if this was pervious page
-?>
 <x-layout>
     <h2>Editing - {{ $employee->first_name }} {{ $employee->last_name }}</h2>
     <form class="form" id="form-edit" action="/employees/{{ $employee->id }}/edit" method="POST">

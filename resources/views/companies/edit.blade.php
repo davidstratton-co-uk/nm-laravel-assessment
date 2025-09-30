@@ -1,8 +1,3 @@
-<?php
-// TODO: Add Existing Employee to Company
-// TODO: Create New Employee to Company Pre Populate Company ID
-?>
-
 <x-layout>
     <h2>Viewing - {{ $company->name }}</h2>
     <form class="form" id="form-edit" class="edit-form" action="/companies/{{ $company->id }}/edit" method="post" enctype="multipart/form-data">
@@ -54,6 +49,9 @@
         @method('DELETE')
     </form>
     <h2>Employees</h2>
+    <div class="employee-create-btn">
+        <a class="icon-swap" href="/employees/create?company_id={{ $company->id }}"><i class="fa-solid fa-square-plus"></i>Create Employee</a>
+    </div>
     <div class="table-box">
     <table class="card-list">
         <thead>
