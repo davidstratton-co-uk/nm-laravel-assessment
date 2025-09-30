@@ -1,5 +1,10 @@
 @use '../helpers/media-query' as mq;
 
+.msg-box {
+    max-width: 50%;
+    margin: 0 auto 1rem;
+}
+
 .msg {
     list-style: none;
     width: 100%;

@@ -141,6 +141,6 @@ class CompanyController
     {
         $company->delete();
 
-        return redirect('/companies');
+        return redirect('/companies')->with('success', 'Company Deleted');
     }
 }

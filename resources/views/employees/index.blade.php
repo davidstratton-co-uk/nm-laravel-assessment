@@ -1,5 +1,12 @@
 <x-layout>
     <h2>Employees</h2>
+    @session('success')
+        <div class="msg-box">
+            <ul class="msg">
+                <li class="msg-success">{{ $value }}</li>
+            </ul>
+        </div>
+    @endsession
     <div class="table-box">
         <table class="card-list">
             <thead>

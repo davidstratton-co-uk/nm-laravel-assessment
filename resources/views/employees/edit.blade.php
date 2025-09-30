@@ -1,6 +1,5 @@
 <?php
 // FIXME: Return to company edit if this was pervious page
-// TODO: Add Employee Delete Successful Confirmation
 ?>
 <x-layout>
     <h2>Editing - {{ $employee->first_name }} {{ $employee->last_name }}</h2>

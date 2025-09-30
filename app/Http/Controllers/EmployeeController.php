@@ -139,6 +139,6 @@ class EmployeeController
     {
         $employee->delete();
 
-        return redirect('/employees');
+        return redirect('/employees')->with('success', 'Employee Deleted!');
     }
 }

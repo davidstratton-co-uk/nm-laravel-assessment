@@ -1,7 +1,6 @@
 <?php
 // TODO: Add Existing Employee to Company
 // TODO: Create New Employee to Company Pre Populate Company ID
-// TODO: Add Company Delete Successful Confirmation
 ?>
 
 <x-layout>
