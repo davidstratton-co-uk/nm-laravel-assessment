@@ -52,10 +52,10 @@ class CompanyController
     public function store()
     {
         request()->validate([
-            'name' => ['required', 'min:3'],
+            'name' => ['required', 'min:3', 'max:255'],
             'logo' => ['image','max:2048'],
-            'email' => ['required','email'],
-            'website' => ['required','url']
+            'email' => ['required','email', 'max:255'],
+            'website' => ['required','url', 'max:255']
         ]);
 
         $logoName = NULL;
@@ -101,10 +101,10 @@ class CompanyController
     public function update(Company $company)
     {
         request()->validate([
-            'name' => ['required', 'min:3'],
+            'name' => ['required', 'min:3', 'max:255'],
             'logo' => ['image','max:2048'],
-            'email' => ['required','email'],
-            'website' => ['required','url']
+            'email' => ['required','email', 'max:255'],
+            'website' => ['required','url', 'max:255']
         ]);
 
         $logoName = $company->logo;

@@ -56,11 +56,11 @@ class EmployeeController
     public function store()
     {
         request()->validate([
-            'first_name' => ['required', 'min:3'],
-            'last_name' => ['required'],
+            'first_name' => ['required', 'min:3', 'max:255'],
+            'last_name' => ['required', 'max:255'],
             'company_id' => ['required'],
-            'phone' => ['required'],
-            'email' => ['required']
+            'phone' => ['required','max:255'],
+            'email' => ['required', 'max:255']
         ]);
 
         $company = Employee::create([
@@ -101,17 +101,17 @@ class EmployeeController
     public function update(Employee $employee)
     {
         request()->validate([
-            'first_name' => ['required', 'min:3'],
-            'last_name' => ['required'],
+            'first_name' => ['required', 'min:3', 'max:255'],
+            'last_name' => ['required', 'max:255'],
             'company_id' => ['required'],
-            'phone' => ['required'],
-            'email' => ['required']
+            'phone' => ['required','max:255'],
+            'email' => ['required', 'max:255']
         ]);
 
         $employee->update([
             'first_name' => request('first_name'),
             'last_name' => request('last_name'),
-            'company_id' => request('company_id'),
+            'company_id' => request('company_id') === "0" ? NULL : request('company_id'),
             'phone' => request('phone'),
             'email' => request('email')
         ]);
