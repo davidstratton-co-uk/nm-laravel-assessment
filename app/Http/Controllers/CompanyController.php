@@ -1,12 +1,6 @@
 <?php
-// FIXME: It's possible to keep sending forms over and over
-// FIXME: Name Not Validated for Max Size
-// FIXME: Website not validated for Max Size
-// FIXME: Delete button clickable over and over
-// FIXME: Update Image Not Working
-// FIXME: Hide Employees Table when no Employees Exist
-// FIXME: Nav Bar Add Employee Button does not populate company id
-// FIXME: Company List Edit and Delete button not square
+// FIXME: Multiple Form Submissions are Allowed
+
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
@@ -116,7 +110,7 @@ class CompanyController
 
         $logoName = $company->logo;
 
-        if (request()->hasFile('company_logo')) {
+        if (request()->hasFile('logo')) {
             
             if ($company->logo) {
             

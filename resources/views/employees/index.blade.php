@@ -23,6 +23,11 @@
                 </tr>
             </thead>
             <tbody>
+                @if (count($employees) == 0)
+                <tr>
+                    <td colspan="9" class="card-list-empty">No Employees Found</td>
+                </tr>
+                @endif
                 @foreach ( $employees as $employee)
                 <tr>
                     <td class="card-img--small">

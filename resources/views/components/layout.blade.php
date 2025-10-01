@@ -1,3 +1,5 @@
+@props(['company_id'])
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +32,8 @@
             </ul>
             <ul class="nav-create">
                 <li class="{{ request()->is('companies/create') ? 'active' : ''  }}"><a class="icon-swap" href="/companies/create"><i class="fa-solid fa-square-plus"></i>Company</a></li>
-                <li class="{{ request()->is('employees/create') ? 'active' : ''  }}"><a class="icon-swap" href="/employees/create"><i class="fa-solid fa-square-plus"></i>Employee</a></li>    
+                <li class="{{ request()->is('employees/create') ? 'active' : ''  }}"><a class="icon-swap" href="/employees/create{{ isset($company_id) ? "/?company_id=" . $company_id : ' ' }}"><i class="fa-solid fa-square-plus"></i>Employee</a></li>    
             </ul>
-
         </nav>
         @endif
         <main>

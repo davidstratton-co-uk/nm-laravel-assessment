@@ -1,5 +1,4 @@
 <?php
-// FIXME: Dashboard - Not Top Aligned
 
 namespace App\Http\Controllers;
 

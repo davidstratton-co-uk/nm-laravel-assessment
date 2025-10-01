@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :company_id="$company->id">
     <h2 class="edit-heading" >Viewing - {{ $company->name }} <a class="edit-link" href="/companies/{{ $company->id }}/edit">Edit Company</a></h2>
     <div class="card-big">   
         <img src="
@@ -28,6 +28,11 @@
                 <th>Email</th>
             </thead>
             <tbody>
+                @if (count($company->employees) == 0)
+                <tr>
+                    <td colspan="6" class="card-list-empty">No Current Employees Found</td>
+                </tr>
+                @endif
                 @foreach($company->employees as $employee)
                 <tr>
                     <td>{{ $employee->first_name }}</td>

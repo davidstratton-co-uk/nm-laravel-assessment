@@ -22,6 +22,11 @@
                 </tr>
             </thead>
             <tbody>
+                @if (count($companies) == 0)
+                <tr>
+                    <td colspan="8" class="card-list-empty">No Companies Found</td>
+                </tr>
+            @endif
             @foreach ($companies as $company)
                 <tr>
                     <td class="card-img--small">

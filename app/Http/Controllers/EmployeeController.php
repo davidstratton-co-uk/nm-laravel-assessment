@@ -1,7 +1,5 @@
 <?php
-// FIXME: It's possible to keep sending forms over and over
-// FIXME: Email not validated
-// FIXME: Phone Number Not Validated
+// FIXME: Multiple Form Submissions are Allowed
 
 namespace App\Http\Controllers;
 
@@ -62,8 +60,8 @@ class EmployeeController
             'first_name' => ['required', 'min:3', 'max:255'],
             'last_name' => ['required', 'max:255'],
             'company_id' => ['required'],
-            'phone' => ['required','max:255'],
-            'email' => ['required', 'max:255']
+            'phone' => ['required', 'min-digits:9', 'max-digits:15',  'max:255'],
+            'email' => ['required', 'email', 'max:255']
         ]);
 
         $company = Employee::create([

@@ -13,6 +13,11 @@
     margin: auto;
     min-width: 410px;
     
+    .card-list-empty {
+        text-align:center;
+        font-weight: 600;
+    }
+
     th,
     td {
         padding: .5rem;
@@ -45,11 +50,17 @@
 
     .edit-btn {
         color: #378f7b;
-        padding: .5rem;
+        margin: .5rem;
+        display: flex;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             border-radius: 50%;
             outline: 1px solid black;
+            outline-offset: .5rem;
         }
     }
 
@@ -57,11 +68,17 @@
         all: unset;
         color: #8f3737;
         cursor: pointer;
-        padding: .5rem;
-     
+        margin: .5rem;  
+        display: flex;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        justify-content: center;
+
         &:hover {
             border-radius: 50%;
             outline: 1px solid black;
+            outline-offset: .5rem;
         }
     }
 }

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :company_id="$company->id">
     <h2>Viewing - {{ $company->name }}</h2>
     <form class="form" id="form-edit" class="edit-form" action="/companies/{{ $company->id }}/edit" method="post" enctype="multipart/form-data">
         @csrf
@@ -63,6 +63,11 @@
             <th></th>    
         </thead>
         <tbody>
+            @if (count($company->employees) == 0)
+                <tr>
+                    <td colspan="6" class="card-list-empty">No Current Employees Found</td>
+                </tr>
+            @endif
             @foreach($company->employees as $employee)
             <tr>
                 <td>{{ $employee->first_name }}</td>
