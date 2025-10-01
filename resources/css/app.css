@@ -10678,7 +10678,6 @@ main {
 #site-nav {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 1rem 0 0 0;
   background-color: #1e242e;
 }
 @media only screen and (min-width: 576px) {
@@ -10688,7 +10687,7 @@ main {
 }
 @media only screen and (min-width: 768px) {
   #site-nav {
-    grid-template-columns: 1fr 1fr 1fr max-content;
+    grid-template-columns: 25% 1fr 1fr max-content;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -10697,8 +10696,7 @@ main {
   }
 }
 #site-nav #nav-header {
-  padding: 0 1rem;
-  grid-row: 1;
+  padding: 1rem;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -10707,7 +10705,6 @@ main {
 @media only screen and (min-width: 576px) {
   #site-nav #nav-header {
     justify-content: left;
-    padding: 0 0 0 1rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -10715,9 +10712,10 @@ main {
     grid-column: span 3;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1240px) {
   #site-nav #nav-header {
     grid-column: 1;
+    grid-row: 1;
   }
 }
 #site-nav #nav-header img {
@@ -10727,18 +10725,20 @@ main {
   font-size: 2rem;
 }
 #site-nav .nav-button {
-  padding: 0 1rem;
-  grid-row: 2;
+  padding: 1rem;
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-column: -1/-2;
 }
 @media only screen and (min-width: 576px) {
   #site-nav .nav-button {
-    padding: 0 1rem 0 0;
-    grid-row: 1;
     justify-self: right;
+  }
+}
+@media only screen and (min-width: 1240px) {
+  #site-nav .nav-button {
+    grid-column: -1/-2;
+    grid-row: 1;
   }
 }
 #site-nav .nav-button .logout-btn {
@@ -10758,14 +10758,13 @@ main {
 }
 @media only screen and (min-width: 768px) {
   #site-nav .nav-lists {
-    grid-column: 1;
     padding: 0 0 0 1rem;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1240px) {
   #site-nav .nav-lists {
-    grid-column: 1;
-    padding: 0 0 0 1rem;
+    margin-top: 2rem;
+    padding: 0;
   }
 }
 #site-nav .nav-lists > li {
@@ -10778,9 +10777,14 @@ main {
 @media only screen and (min-width: 768px) {
   #site-nav .nav-create {
     margin-top: 1rem;
-    grid-column: 2;
     background-color: inherit;
     padding: 0 1rem 0 0;
+  }
+}
+@media only screen and (min-width: 1240px) {
+  #site-nav .nav-create {
+    margin-top: 2rem;
+    padding: 0;
   }
 }
 @media only screen and (min-width: 576px) {
@@ -10795,9 +10799,10 @@ main {
     justify-self: center;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1240px) {
   #site-nav .nav-lists,
   #site-nav .nav-create {
+    grid-row: 1;
     grid-column: span 1;
   }
 }
@@ -10854,11 +10859,7 @@ h2 {
 .card-list {
   background-color: #1e242e;
   margin: auto;
-}
-.card-list caption {
-  margin: 2rem 0 1rem 0;
-  font-size: 1.5rem;
-  color: rgb(200, 200, 200);
+  min-width: 410px;
 }
 .card-list th,
 .card-list td {
@@ -11131,9 +11132,15 @@ h2 {
 }
 @media only screen and (min-width: 992px) {
   .dashboard {
-    grid-template-columns: max-content max-content;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
+}
+.dashboard .dashboard-box h3 {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  color: rgb(200, 200, 200);
+  text-align: center;
 }
 
 .msg-box {

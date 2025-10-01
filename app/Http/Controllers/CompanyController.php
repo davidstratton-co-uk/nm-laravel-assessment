@@ -1,5 +1,12 @@
 <?php
-
+// FIXME: It's possible to keep sending forms over and over
+// FIXME: Name Not Validated for Max Size
+// FIXME: Website not validated for Max Size
+// FIXME: Delete button clickable over and over
+// FIXME: Update Image Not Working
+// FIXME: Hide Employees Table when no Employees Exist
+// FIXME: Nav Bar Add Employee Button does not populate company id
+// FIXME: Company List Edit and Delete button not square
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
